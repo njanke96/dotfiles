@@ -5,3 +5,10 @@ set number                  " add line numbers
 set nowrap                  " disable wrapping by default
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
+
+call plug#begin()
+
+Plug 'nickeb96/fish.vim'
+
+call plug#end()
+
