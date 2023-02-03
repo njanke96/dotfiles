@@ -9,6 +9,7 @@ Waybar modified from [EduardoPazz's config](https://github.com/EduardoPazz/dot_f
 I'm probably forgetting something
 
 ```shell
+alacritty
 breeze  # For QT5/6
 dunst  # Notifications
 fish  # Best shell

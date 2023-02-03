@@ -4,7 +4,7 @@
 # turn off screen when inactive for more than 10 minutes
 # (uncomment to) suspend after 15 minutes
 
-lock="pkill -o swaylock; swaylock -f -C $HOME/.config/hypr/swaylock.conf"
+lock="$HOME/.config/hypr/scripts/lock.sh"
 
 swayidle -w \
         before-sleep "$lock" \
