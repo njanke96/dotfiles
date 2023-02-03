@@ -404,6 +404,10 @@
 #    msg_urgency = critical
 #    fullscreen = show
 
+[play_sound]
+    summary = "*"
+	script = /home/nathan/sounds/alert.sh
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
