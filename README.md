@@ -34,8 +34,8 @@ waybar-hyprland
 
 ## Screenshots
 
-![screenshot1](https://raw.githubusercontent.com/njanke96/dots/master/misc/screen1.png)
-![screenshot2](https://raw.githubusercontent.com/njanke96/dots/master/misc/screen2.png)
+![screenshot1](https://raw.githubusercontent.com/njanke96/dotfiles/master/misc/screen1.png)
+![screenshot2](https://raw.githubusercontent.com/njanke96/dotfiles/master/misc/screen2.png)
 
 ## Note to self
 
