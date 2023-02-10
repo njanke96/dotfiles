@@ -11,6 +11,7 @@ mkdir -p ./configs/nvim
 mkdir -p ./configs/omf
 mkdir -p ./configs/rofi/themes
 mkdir -p ./configs/waybar
+mkdir -p ./sounds
 
 cp -v $HOME/.config/alacritty/*.yml ./configs/alacritty/
 cp -v $HOME/.config/fish/config.fish ./configs/fish/
@@ -25,4 +26,7 @@ cp -v $HOME/.config/rofi/config.rasi ./configs/rofi/
 cp -v $HOME/.config/rofi/themes/nord.rasi ./configs/rofi/themes/
 cp -v $HOME/.config/waybar/config ./configs/waybar/
 cp -v $HOME/.config/waybar/style.css ./configs/waybar/
+cp -v $HOME/sounds/*.sh ./sounds/
+cp -v $HOME/sounds/*.mp3 ./sounds/
+cp -v $HOME/sounds/*.wav ./sounds/
 
