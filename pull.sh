@@ -28,5 +28,5 @@ cp -v $HOME/.config/waybar/config ./configs/waybar/
 cp -v $HOME/.config/waybar/style.css ./configs/waybar/
 cp -v $HOME/sounds/*.sh ./sounds/
 cp -v $HOME/sounds/*.mp3 ./sounds/
-cp -v $HOME/sounds/*.wav ./sounds/
+cp -v $HOME/sounds/*.ogg ./sounds/
 
