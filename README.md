@@ -19,9 +19,10 @@ hyprland
 hyprpaper-git
 nemo
 neovim
-nordic-darker-theme  # GTK Theme
+nordic-bluish-accent-theme  # GTK Theme
 nordzy-cursors
 nordzy-icon-theme-git
+nwg-look-bin
 pavucontrol
 polkit-kde-agent  # Hyprland essential
 pulseaudio
@@ -38,6 +39,11 @@ waybar-hyprland
 
 ![screenshot1](https://raw.githubusercontent.com/njanke96/dotfiles/master/misc/screen1.png)
 ![screenshot2](https://raw.githubusercontent.com/njanke96/dotfiles/master/misc/screen2.png)
+
+## Install Notes
+
+- Apply gtk 2/3 theme and icons with `nwg-look`
+- Use `kvantummanager` to first install nordic-bluish-accent from the main Nordic theme repo 'kde' folder, then apply it as the default qt application theme with `qt5ct` and `qt6ct`. Transparency will need to be disabled manually. I'm not sure what configs kvantummanager writes. 
 
 ## Note to self
 
