@@ -19,7 +19,7 @@ hyprland
 hyprpaper-git
 nemo
 neovim
-nordic-theme  # GTK Theme
+nordic-darker-theme  # GTK Theme
 nordzy-cursors
 nordzy-icon-theme-git
 pavucontrol
