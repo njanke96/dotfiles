@@ -25,8 +25,11 @@ nordzy-icon-theme-git
 nwg-look-bin
 pavucontrol
 polkit-kde-agent
+pipewire
+pipewire-audio
 pipewire-alsa
 pipewire-pulse
+wireplumber
 rofi-lbonn-wayland-git  # Launcher
 slurp  # For selecting screen region (for grim)
 swayidle
