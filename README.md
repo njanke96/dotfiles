@@ -24,9 +24,9 @@ nordzy-cursors
 nordzy-icon-theme-git
 nwg-look-bin
 pavucontrol
-polkit-kde-agent  # Hyprland essential
-pulseaudio
-pulseaudio-alsa
+polkit-kde-agent
+pipewire-alsa
+pipewire-pulse
 rofi-lbonn-wayland-git  # Launcher
 slurp  # For selecting screen region (for grim)
 swayidle
