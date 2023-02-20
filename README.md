@@ -34,6 +34,7 @@ rofi-lbonn-wayland-git  # Launcher
 slurp  # For selecting screen region (for grim)
 swayidle
 swaylock-effects
+ttf-font-awesome  # icons for waybar
 waybar-hyprland
 
 ```
