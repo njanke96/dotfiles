@@ -48,6 +48,7 @@ waybar-hyprland
 
 - Apply gtk 2/3 theme and icons with `nwg-look`
 - Use `kvantummanager` to first install nordic-bluish-accent from the main Nordic theme repo 'kde' folder, then apply it as the default qt application theme with `qt5ct` and `qt6ct`. Transparency will need to be disabled manually. I'm not sure what configs kvantummanager writes. 
+- Install [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## Note to self
 
