@@ -2,8 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-source $HOME/.config/fish/secrets.fish
-
 set -U fish_prompt_pwd_dir_length 0
 set -gx PATH "/home/nathan/.local/bin" $PATH
 

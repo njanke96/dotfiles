@@ -9,7 +9,6 @@ lock="$HOME/.config/hypr/scripts/lock.sh"
 swayidle -w \
         before-sleep "$lock" \
 		timeout 300 "$lock" \
-		timeout 600 "hyprctl dispatch dpms off" \
-			resume "hyprctl dispatch dpms on" # \
-#		timeout 900 "systemctl suspend" \
-#			resume "hyperctl dispatch dpms on"
+		timeout 600 "systemctl suspend" \
+			resume "hyprctl dispatch dpms on" \
+

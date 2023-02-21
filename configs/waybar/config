@@ -7,7 +7,7 @@
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["hyprland/window"],
 
-    "modules-right": ["cpu", "memory", "temperature#cpu", "temperature#gpu", "pulseaudio", "clock", "tray"],
+    "modules-right": ["cpu", "memory", "temperature#cpu", "pulseaudio", "battery", "backlight", "clock", "tray"],
     
     // Modules configuration
     "wlr/workspaces": {
@@ -48,9 +48,9 @@
         "format": "{}% "
     },
     "temperature#cpu": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-	"critical-threshold": 90,
-	"format": "CPU {temperatureC}°C ",
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+	"critical-threshold": 120,
+	"format": "{temperatureC}°C ",
 	"interval": 1
     },
     "temperature#gpu": {
@@ -60,9 +60,11 @@
 	"interval": 1
     },
     "backlight": {
-        // "device": "acpi_video1",
+        "device": "amdgpu_bl0",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": [""],
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1"
     },
     "battery": {
         "states": {
@@ -90,7 +92,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 0, 
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
