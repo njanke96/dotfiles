@@ -5,9 +5,11 @@
 # (uncomment to) suspend after 15 minutes
 
 lock="$HOME/.config/hypr/scripts/lock.sh"
+rgb="$HOME/.config/hypr/scripts/rgb.sh"
 
 swayidle -w \
         before-sleep "$lock" \
+		after-resume "$rgb" \
 		timeout 300 "$lock" \
 		timeout 600 "hyprctl dispatch dpms off" \
 			resume "hyprctl dispatch dpms on" # \
