@@ -7,7 +7,7 @@
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["hyprland/window"],
 
-    "modules-right": ["cpu", "memory", "temperature#cpu", "temperature#gpu", "pulseaudio", "clock", "tray"],
+    "modules-right": ["cpu", "memory", "temperature#cpu", "temperature#gpu", "pulseaudio", "idle_inhibitor", "clock", "tray"],
     
     // Modules configuration
     "wlr/workspaces": {

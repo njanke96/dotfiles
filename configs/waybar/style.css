@@ -205,6 +205,12 @@
     background: @sound;
 }
 
+#idle_inhibitor {
+	background: @sound;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
 #pulseaudio.muted {
     /* No styles */
 }

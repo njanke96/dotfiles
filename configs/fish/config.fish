@@ -14,5 +14,7 @@ end
 
 # pnpm
 set -gx PNPM_HOME "/home/nathan/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
 # pnpm end
