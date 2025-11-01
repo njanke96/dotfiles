@@ -1,0 +1,63 @@
+theme = "molokai"
+
+[editor]
+bufferline = "multiple"
+
+[editor.file-picker]
+hidden = true
+
+# git
+[keys.normal.C-g]
+# open lazygit
+g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all",
+    ":set mouse false",
+    ":set mouse true"
+]
+# open lazygit for current buffer (git log for current buffer)
+l = [
+    ":write-all",
+    ":insert-output lazygit -f '%{buffer_name}' -sm half >/dev/tty",
+    ":redraw",
+    ":reload-all",
+    ":set mouse false",
+    ":set mouse true"
+]
+# in-line blame
+b = ":sh echo \"$(git log -1 --pretty=format:'%%h %%an <%%ae> %%ad %%s' $(git blame -L '%{cursor_line},+1' '%{buffer_name}' | awk '{print $1}'))\""
+
+# yazi
+[keys.normal.C-y]
+# Open file(s) in the current window
+y = [
+    ":sh rm -f /tmp/unique-file-h21a434",
+    ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+    ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+    ":open %sh{cat /tmp/unique-file-h21a434}",
+    ":redraw",
+    ":set mouse false",
+    ":set mouse true",
+]
+# Open file(s) in a vertical split
+v = [
+    ":sh rm -f /tmp/unique-file-h21a434",
+    ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+    ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+    ":vsplit %sh{cat /tmp/unique-file-h21a434}",
+    ":redraw",
+    ":set mouse false",
+    ":set mouse true",
+]
+# Open file(s) in a horizontal split
+h = [
+    ":sh rm -f /tmp/unique-file-h21a434",
+    ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+    ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+    ":hsplit %sh{cat /tmp/unique-file-h21a434}",
+    ":redraw",
+    ":set mouse false",
+    ":set mouse true",
+]
