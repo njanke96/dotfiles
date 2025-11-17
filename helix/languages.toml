@@ -1,0 +1,7 @@
+[language-server.lemminx]
+command = "lemminx"
+
+[[language]]
+name = "xml"
+language-servers = ["lemminx"]
+auto-format = true
