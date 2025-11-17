@@ -14,6 +14,7 @@ safe_copy "helix/languages.toml" $"($helix_config_dir)/languages.toml"
 
 # nushell
 safe_copy "nushell/config.nu" $"($nushell_config_dir)/config.nu"
+safe_copy "nushell/autoload/01-linux.nu" $"($nushell_config_dir)/autoload/01-linux.nu"
 safe_copy "nushell/autoload/90-carapace.nu" $"($nushell_config_dir)/autoload/90-carapace.nu"
 safe_copy "nushell/autoload/90-fnm.nu" $"($nushell_config_dir)/autoload/90-fnm.nu"
 

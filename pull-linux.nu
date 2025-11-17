@@ -11,6 +11,7 @@ cp $"($helix_config_dir)/languages.toml" "helix/languages.toml"
 
 # nushell
 cp $"($nushell_config_dir)/config.nu" "nushell/config.nu"
+cp $"($nushell_config_dir)/autoload/01-linux.nu" "nushell/autoload/01-linux.nu"
 cp $"($nushell_config_dir)/autoload/90-carapace.nu" "nushell/autoload/90-carapace.nu"
 cp $"($nushell_config_dir)/autoload/90-fnm.nu" "nushell/autoload/90-fnm.nu"
 
