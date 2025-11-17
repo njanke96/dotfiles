@@ -1,0 +1,11 @@
+[general]
+import = [
+  "~/.config/alacritty/custom_themes/gruvbox-dark.toml"
+]
+live_config_reload = true
+
+[window]
+opacity = 0.97
+
+[font]
+normal = { family = "NotoSansM Nerd Font", style = "Regular" }

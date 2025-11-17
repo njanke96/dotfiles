@@ -1,0 +1,17 @@
+# keyboard
+XKB_DEFAULT_LAYOUT=us
+XKB_DEFAULT_MODEL=pc104
+
+# qt
+QT_QPA_PLATFORM=wayland
+QT_QPA_PLATFORMTHEME=qt5ct
+
+# cursor theme
+XCURSOR_PATH=/usr/share/icons:/home/nathan/.local/share/icons
+XCURSOR_THEME=phinger-cursors-dark
+
+# XDG env
+XDG_CACHE_HOME=/home/nathan/.cache
+XDG_CONFIG_DIRS=/etc/xdg
+XDG_CONFIG_HOME=/home/nathan/.config
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share/flatpak/exports/share
