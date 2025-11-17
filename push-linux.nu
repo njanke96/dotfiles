@@ -1,4 +1,4 @@
-use safe-copy.nu safe_copy;
+use lib.nu safe_copy;
 
 let config_home = $env.XDG_CONFIG_HOME
 
