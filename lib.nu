@@ -1,6 +1,22 @@
+use linux_mappings.nu get_linux_file_map
+
 def is_file [file_path: string] {
   let isfile = ($"($file_path)" | path type) == 'file'
   return $isfile
+}
+
+export def get_os_mappings [] {
+  mut mappings = []
+
+  if (sys host | get long_os_version | str contains -i linux) {
+    print "Detected os is Linux"
+    $mappings = get_linux_file_map 
+  } else if (sys host | get long_os_version | str contains -i macos) {
+    print "Detected os is macOS"
+    # $mappings = get_macos_file_map
+  }
+
+  return $mappings
 }
 
 # Safely copy a file
