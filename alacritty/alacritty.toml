@@ -8,4 +8,4 @@ live_config_reload = true
 opacity = 0.97
 
 [font]
-normal = { family = "NotoSansM Nerd Font", style = "Regular" }
+normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
