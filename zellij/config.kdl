@@ -1,3 +1,5 @@
+// Mostly default keybinds with some changed to avoid conflicts with helix
+// Defaults generated as of zellij 0.43.1
 
 keybinds clear-defaults=true {
     locked {
