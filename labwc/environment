@@ -14,4 +14,5 @@ XCURSOR_THEME=phinger-cursors-dark
 XDG_CACHE_HOME=/home/nathan/.cache
 XDG_CONFIG_DIRS=/etc/xdg
 XDG_CONFIG_HOME=/home/nathan/.config
-XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share/flatpak/exports/share
+XDG_DATA_HOME=/home/nathan/.local/share
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share:/home/nathan/.local/share/flatpak/exports/share

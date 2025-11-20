@@ -4,17 +4,17 @@ $env.path ++= [
 ]
 
 # xbps-install alias
-def --wrapped xi [...args] {
+def --wrapped sxbi [...args] {
    sudo xbps-install ...$args
 }
 
 # xbps-remove alias
-def --wrapped xr [...args] {
+def --wrapped sxbr [...args] {
   sudo xbps-remove ...$args
 }
 
 # xbps-query alias
-def --wrapped xq [...args] {
+def --wrapped xbq [...args] {
   xbps-query ...$args
 }
 
