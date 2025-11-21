@@ -77,6 +77,12 @@
       <action name="ToggleMaximize" />
     </keybind>
 
+    <keybind key="W-S-Left">
+      <action name="MoveToOutput" direction="left" />
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveToOutput" direction="right" />
+    </keybind>
     <keybind key="W-S-1">
       <action name="SendToDesktop" to="1" />
     </keybind>
