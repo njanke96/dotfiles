@@ -30,7 +30,15 @@ export def safe_copy [source: string, destination: string] {
 
   if (is_file $destination) {
     print $"File '($destination) exists. Showing the diff \(if there is one\)"
-    do --ignore-errors { delta $"($destination)" $"($source)" }
+    let diff_result = do --ignore-errors { delta $"($destination)" $"($source)" } | complete
+
+    if ($diff_result | get exit_code) == 0 {
+      print "There is no difference, skipping."
+      return 1
+    }
+
+    print $"($diff_result | get stdout)"
+    
     let answer = input --default "n" $"Overwrite '($destination)'? [y/N] " | str downcase
 
     if ($answer != 'y') {
