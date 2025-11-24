@@ -41,6 +41,9 @@ export def "get_linux_file_map" [] {
 
     # rofi
     { repo: $"rofi/config.rasi", sys: $"($config_home)/rofi/config.rasi" }
+
+    # topgrade
+    { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
   ]
   
   return $file_map
