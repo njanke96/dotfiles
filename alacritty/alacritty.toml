@@ -9,7 +9,6 @@ shell = { program = "/usr/bin/zellij", args = [] }
 
 [window]
 opacity = 0.97
-blur = true
 
 [font]
 normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
