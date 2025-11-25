@@ -1,7 +1,18 @@
 [language-server.lemminx]
 command = "lemminx"
 
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
 [[language]]
 name = "xml"
 language-servers = ["lemminx"]
 auto-format = true
+
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
