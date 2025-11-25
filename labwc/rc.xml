@@ -23,6 +23,8 @@
     <name>gruvbox-material-dark-blocks</name>
     <icon>Gruvbox-Plus-Dark</icon>
     <font name="Noto Sans" size="10" />
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
   </theme>
 
   <desktops number="4" />

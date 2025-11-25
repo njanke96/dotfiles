@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <openbox_menu>
   <menu id="root-menu" label="">
+    <item label="Web Browser">
+      <action name="Execute" command="exo-open --launch WebBrowser" />
+    </item>
     <item label="File Manager">
       <action name="Execute" command="exo-open --launch FileManager" />
     </item>

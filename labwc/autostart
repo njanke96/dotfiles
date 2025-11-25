@@ -25,7 +25,9 @@ xfsettingsd &
 xfce4-panel &
 
 # audio idle inhibit (blocks loginctl suspend when audio is playing)
-sway-audio-idle-inhibit &
+# points to a script that just runs sway-audio-idle-inhibit in a loop in case
+# it crashes
+/home/nathan/scripts/saii.sh &
 
 # swaylock until xfce power manager has better wayland support
 swayidle -w timeout 900 'loginctl suspend' &
