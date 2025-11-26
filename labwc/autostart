@@ -29,6 +29,9 @@ xfce4-panel &
 # it crashes
 /home/nathan/scripts/saii.sh &
 
+# conky (also often crashes)
+/home/nathan/scripts/conky.sh &
+
 # swaylock until xfce power manager has better wayland support
 swayidle -w timeout 900 'loginctl suspend' &
 

@@ -27,6 +27,10 @@ export def "get_linux_file_map" [] {
     { repo: $"alacritty/alacritty.toml", sys: $"($config_home)/alacritty/alacritty.toml" }
     { repo: $"alacritty/custom_themes/gruvbox-dark.toml", sys: $"($config_home)/alacritty/custom_themes/gruvbox-dark.toml" }
 
+    # conky
+    { repo: "conky/conky.conf", sys: $"($config_home)/conky/conky.conf"}
+    { repo: "conky/lib.lua", sys: $"($config_home)/conky/lib.lua"}
+
     # containers
     { repo: $"containers/containers.conf", sys: $"($config_home)/containers/containers.conf" }
 
