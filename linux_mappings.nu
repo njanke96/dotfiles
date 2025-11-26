@@ -1,4 +1,5 @@
 export def "get_linux_file_map" [] {
+  let home = $env.HOME;
   let config_home = $env.XDG_CONFIG_HOME
   let file_map = [
     ## Common
@@ -45,6 +46,12 @@ export def "get_linux_file_map" [] {
 
     # rofi
     { repo: $"rofi/config.rasi", sys: $"($config_home)/rofi/config.rasi" }
+
+    # scripts
+    { repo: "scripts/conky.sh", sys: $"($home)/scripts/conky.sh" }
+    { repo: "scripts/post-suspend.sh", sys: $"($home)/scripts/post-suspend.sh" }
+    { repo: "scripts/pre-suspend.sh", sys: $"($home)/scripts/pre-suspend.sh" }
+    { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
