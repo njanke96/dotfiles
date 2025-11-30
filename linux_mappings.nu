@@ -38,6 +38,7 @@ export def "get_linux_file_map" [] {
     # labwc
     { repo: $"labwc/autostart", sys: $"($config_home)/labwc/autostart" }
     { repo: $"labwc/environment", sys: $"($config_home)/labwc/environment" }
+    { repo: $"labwc/shutdown", sys: $"($config_home)/labwc/shutdown" }
     { repo: $"labwc/menu.xml", sys: $"($config_home)/labwc/menu.xml" }
     { repo: $"labwc/rc.xml", sys: $"($config_home)/labwc/rc.xml" }
 

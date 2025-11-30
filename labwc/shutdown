@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# these never shut down properly
+pgrep -i conky | xargs kill
+pgrep -i sway-audio-idle | xargs kill
