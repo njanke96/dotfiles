@@ -1,5 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-# these never shut down properly
-pgrep -i conky | xargs kill
-pgrep -i sway-audio-idle | xargs kill
+# Shutdown daemons
+pgrep -f swaybg | xargs kill &>/dev/null
+pgrep -f pipewire | xargs kill &>/dev/null
+pgrep -f xfce-polkit | xargs kill &>/dev/null
+pgrep -f xfsettingsd | xargs kill &>/dev/null
+pgrep -f xfce4-notifyd | xargs kill &>/dev/null
+pgrep -f swayidle | xargs kill &>/dev/null
+pgrep -i conky | xargs kill &>/dev/null
+pgrep -i sway-audio-idle | xargs kill &>/dev/null
+pgrep -i saii | xargs kill &>/dev/null

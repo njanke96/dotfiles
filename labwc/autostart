@@ -37,7 +37,7 @@ swayidle -w timeout 900 'loginctl suspend' &
 
 # run the after resume script now
 # to run on resume it must also be called as 'nathan' via /etc/elogind/system-sleep/post-sleep.sh (if [ "$1" = "post" ], see loginctl(1))
-/home/nathan/scripts/post-suspend.sh &
+/home/nathan/scripts/post-suspend.sh
 
 # sleep before starting applications (mostly for pipewire to finish starting)
 # (there is definitely a better solution for this)
