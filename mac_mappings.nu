@@ -16,8 +16,8 @@ export def "get_mac_file_map" [] {
     # lazygit
     { repo: "lazygit_mac/config.yml", sys: $"($app_support)/lazygit/config.yml"}
 
-    # zellij
-    { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
+    # zathura
+    { repo: "zathura/zathurarc", sys: $"($config_home)/zathura/zathurarc"}
 
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
