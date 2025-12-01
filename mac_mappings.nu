@@ -18,5 +18,8 @@ export def "get_mac_file_map" [] {
 
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
+
+    # zellij
+    { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
   ]
 }

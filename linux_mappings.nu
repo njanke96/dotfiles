@@ -18,6 +18,9 @@ export def "get_linux_file_map" [] {
     # lazygit
     { repo: "lazygit/config.yml", sys: $"($config_home)/lazygit/config.yml"}
 
+    # zathura
+    { repo: "zathura/zathurarc", sys: $"($config_home)/zathura/zathurarc"}
+
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
 
