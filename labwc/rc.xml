@@ -23,6 +23,7 @@
   <theme>
     <name>gruvbox-material-dark-blocks</name>
     <icon>Gruvbox-Plus-Dark</icon>
+    <fallbackAppIcon>window</fallbackAppIcon>
     <font name="Noto Sans" size="10" />
     <dropShadows>yes</dropShadows>
     <dropShadowsOnTiled>yes</dropShadowsOnTiled>
@@ -68,7 +69,9 @@
 
     <!-- Mute simply opens pavucontrol, works for now -->
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="alacritty -T wiremix --class wiremix -e wiremix" />
+      <action name="Execute">
+        <command>alacritty -T wiremix --class wiremix -e wiremix --tab output</command>
+      </action>
     </keybind>
 
     <!-- Window shortcuts -->
@@ -143,6 +146,10 @@
       <action name="ToggleDecorations" />
     </keybind>
 
+    <keybind key="W-c">
+      <action name="AutoPlace" policy="center" />
+    </keybind>
+
     <!-- Meta + p always on top -->
     <!-- I wish this had a query as well so I could use the same notify as below -->
     <keybind key="W-p">
@@ -182,4 +189,11 @@
       <accelProfile>flat</accelProfile>
     </device>
   </libinput>
+
+  <!-- Fix apps with shitty client-side decorations -->
+  <windowRules>
+    <windowRule identifier="spotify-qt">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+  </windowRules>
 </labwc_config>
