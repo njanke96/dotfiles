@@ -3,7 +3,6 @@ XKB_DEFAULT_LAYOUT=us
 XKB_DEFAULT_MODEL=pc104
 
 # qt
-QT_QPA_PLATFORM=wayland
 QT_QPA_PLATFORMTHEME=qt5ct
 
 # cursor theme

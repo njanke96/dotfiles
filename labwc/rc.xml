@@ -7,6 +7,7 @@
     <gap>8</gap>
 
     <!-- Tearing doesn't seem to happen with adaptivesync -->
+    <!-- allowTearing yes should allow for less input lag in games? -->
     <adaptiveSync>fullscreen</adaptiveSync>
     <allowTearing>yes</allowTearing>
   </core>
@@ -64,8 +65,10 @@
       <action name="Execute" command="amixer -D pulse sset Master 5%+" />
     </keybind>
     -->
+
+    <!-- Mute simply opens pavucontrol, works for now -->
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="pavucontrol" />
+      <action name="Execute" command="alacritty -T wiremix --class wiremix -e wiremix" />
     </keybind>
 
     <!-- Window shortcuts -->
@@ -79,40 +82,51 @@
       <action name="ToggleMaximize" />
     </keybind>
 
+    <!-- Meta + shift manipulates windows between outputs -->
+    <keybind key="W-S-Left">
+      <action name="MoveToOutput" direction="left" />
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveToOutput" direction="right" />
+    </keybind>
+
+    <!-- Meta + alt manipulates windows between v-desktops -->
+    <keybind key="W-A-Left">
+      <action name="SendToDesktop" to="left" wrap="yes" />
+    </keybind>
+    <keybind key="W-A-Right">
+      <action name="SendToDesktop" to="right" wrap="yes" />
+    </keybind>
+    <keybind key="W-A-1">
+      <action name="SendToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-A-2">
+      <action name="SendToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-A-3">
+      <action name="SendToDesktop" to="3" />
+    </keybind>
+    <keybind key="W-A-4">
+      <action name="SendToDesktop" to="4" />
+    </keybind>
+
+    <!-- Control + meta navigates between v-desktops -->
     <keybind key="C-W-Left">
       <action name="GoToDesktop" to="left" wrap="yes" />
     </keybind>
     <keybind key="C-W-Right">
       <action name="GoToDesktop" to="right" wrap="yes" />
     </keybind>
-    <keybind key="W-A-Left">
-      <action name="MoveToOutput" direction="left" />
-    </keybind>
-    <keybind key="W-A-Right">
-      <action name="MoveToOutput" direction="right" />
-    </keybind>
-    <keybind key="W-S-1">
-      <action name="SendToDesktop" to="1" />
-    </keybind>
-    <keybind key="W-S-2">
-      <action name="SendToDesktop" to="2" />
-    </keybind>
-    <keybind key="W-S-3">
-      <action name="SendToDesktop" to="3" />
-    </keybind>
-    <keybind key="W-S-4">
-      <action name="SendToDesktop" to="4" />
-    </keybind>
-    <keybind key="W-1">
+    <keybind key="C-W-1">
       <action name="GoToDesktop" to="1" />
     </keybind>
-    <keybind key="W-2">
+    <keybind key="C-W-2">
       <action name="GoToDesktop" to="2" />
     </keybind>
-    <keybind key="W-3">
+    <keybind key="C-W-3">
       <action name="GoToDesktop" to="3" />
     </keybind>
-    <keybind key="W-4">
+    <keybind key="C-W-4">
       <action name="GoToDesktop" to="4" />
     </keybind>
 
@@ -121,6 +135,38 @@
       <action name="Execute">
         <command>sh -c 'grim -g "`slurp`" -t png - | wl-copy -t image/png; wl-paste >
           $HOME/Pictures/screenshot.png'</command>
+      </action>
+    </keybind>
+
+    <!-- Toggle decorations -->
+    <keybind key="W-d">
+      <action name="ToggleDecorations" />
+    </keybind>
+
+    <!-- Meta + p always on top -->
+    <!-- I wish this had a query as well so I could use the same notify as below -->
+    <keybind key="W-p">
+      <action name="ToggleAlwaysOnTop" />
+    </keybind>
+
+    <!-- Meta + o omnipresence -->
+    <keybind key="W-o">
+      <action name="If">
+        <query>
+          <omnipresent>yes</omnipresent>
+        </query>
+        <then>
+          <action name="ToggleOmnipresent" />
+          <action name="Execute">
+            <command>sh -c 'notify-send "WM" "Omnipresense OFF"'</command>
+          </action>
+        </then>
+        <else>
+          <action name="ToggleOmnipresent" />
+          <action name="Execute">
+            <command>sh -c 'notify-send "WM" "Omnipresense ON"'</command>
+          </action>
+        </else>
       </action>
     </keybind>
   </keyboard>
