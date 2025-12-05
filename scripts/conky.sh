@@ -12,6 +12,10 @@ cleanup() {
     if [ ! -z "$CONKY_PID" ] && kill -0 $CONKY_PID 2>/dev/null; then
         kill $CONKY_PID
     fi
+
+    # kill the actual conky process
+    pgrep -f conky-ubuntu | xargs kill
+
     exit 0
 }
 
