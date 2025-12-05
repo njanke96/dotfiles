@@ -176,6 +176,23 @@
         </else>
       </action>
     </keybind>
+
+    <!-- obs-cli shortcuts -->
+    <keybind key="S-F7">
+      <action name="Execute">
+        <command>obs-cli replay toggle</command>
+      </action>
+    </keybind>
+    <keybind key="S-F8">
+      <action name="Execute">
+        <command>obs-cli replay save</command>
+      </action>
+    </keybind>
+    <keybind key="S-F9">
+      <action name="Execute">
+        <command>obs-cli record toggle</command>
+      </action>
+    </keybind>
   </keyboard>
 
   <snapping>
