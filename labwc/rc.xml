@@ -178,17 +178,17 @@
     </keybind>
 
     <!-- obs-cli shortcuts -->
-    <keybind key="S-F7">
+    <keybind key="W-F7">
       <action name="Execute">
         <command>obs-cli replay toggle</command>
       </action>
     </keybind>
-    <keybind key="S-F8">
+    <keybind key="W-F8">
       <action name="Execute">
         <command>obs-cli replay save</command>
       </action>
     </keybind>
-    <keybind key="S-F9">
+    <keybind key="W-F9">
       <action name="Execute">
         <command>obs-cli record toggle</command>
       </action>
