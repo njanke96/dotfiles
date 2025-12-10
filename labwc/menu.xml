@@ -13,6 +13,9 @@
     <item label="XFCE Settings">
       <action name="Execute" command="xfce4-settings-manager" />
     </item>
+    <item label="Windows">
+      <action name="Execute" command="/home/nathan/scripts/windows.sh" />
+    </item>
 
     <separator />
 
