@@ -58,19 +58,23 @@
 
     <numlock>on</numlock>
 
-    <!-- TODO: find a solution for pipewire/pulse, maybe with a nice overlay
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer -D pulse sset Master 5%-" />
+      <action name="Execute" command="nu /home/nathan/scripts/volume.nu nag down" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer -D pulse sset Master 5%+" />
+      <action name="Execute" command="nu /home/nathan/scripts/volume.nu nag up" />
     </keybind>
-    -->
 
     <!-- Mute simply opens pavucontrol, works for now -->
     <keybind key="XF86_AudioMute">
       <action name="Execute">
         <command>alacritty -T wiremix --class wiremix -e wiremix --tab output</command>
+      </action>
+    </keybind>
+    <!-- Meta + mute opens levels -->
+    <keybind key="W-XF86_AudioMute">
+      <action name="Execute">
+        <command>alacritty -T wiremix --class wiremix -e wiremix --tab playback</command>
       </action>
     </keybind>
 

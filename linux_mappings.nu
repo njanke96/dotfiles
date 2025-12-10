@@ -56,6 +56,8 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/post-suspend.sh", sys: $"($home)/scripts/post-suspend.sh" }
     { repo: "scripts/pre-suspend.sh", sys: $"($home)/scripts/pre-suspend.sh" }
     { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }
+    { repo: "scripts/volume.nu", sys: $"($home)/scripts/volume.nu" }
+    { repo: "scripts/windows.sh", sys: $"($home)/scripts/windows.sh" }
     { repo: "scripts/x3d_mode_freq.sh", sys: $"($home)/scripts/x3d_mode_freq.sh" }
     { repo: "scripts/x3d_mode_cache.sh", sys: $"($home)/scripts/x3d_mode_cache.sh" }
     { repo: "scripts/x3d_get_mode.sh", sys: $"($home)/scripts/x3d_get_mode.sh" }
