@@ -53,6 +53,7 @@ export def "get_linux_file_map" [] {
 
     # scripts
     { repo: "scripts/conky.sh", sys: $"($home)/scripts/conky.sh" }
+    { repo: "scripts/nag.sh", sys: $"($home)/scripts/nag.sh" }
     { repo: "scripts/post-suspend.sh", sys: $"($home)/scripts/post-suspend.sh" }
     { repo: "scripts/pre-suspend.sh", sys: $"($home)/scripts/pre-suspend.sh" }
     { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }

@@ -33,13 +33,13 @@ def "main down" [] {
 def "main nag up" [] {
   main up
   let vol = (main get)
-  labnag --background-color 282828ee --border-bottom-color 00000000 -m $"Volume: ($vol)%"
+  exec $"($env.HOME)/scripts/nag.sh" $"Volume: ($vol)%"
 }
 
 def "main nag down" [] {
   main down
   let vol = (main get)
-  labnag --background-color 282828ee --border-bottom-color 00000000 -m $"Volume: ($vol)%"
+  exec $"($env.HOME)/scripts/nag.sh" $"Volume: ($vol)%"
 }
 
 def main [] {
