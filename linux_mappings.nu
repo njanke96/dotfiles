@@ -18,6 +18,9 @@ export def "get_linux_file_map" [] {
     # lazygit
     { repo: "lazygit/config.yml", sys: $"($config_home)/lazygit/config.yml"}
 
+    # sshl
+    { repo: "ssh-list/ssh-list_config.toml", sys: $"($home)/.ssh/ssh-list_config.toml"}
+
     # zathura
     { repo: "zathura/zathurarc", sys: $"($config_home)/zathura/zathurarc"}
 
