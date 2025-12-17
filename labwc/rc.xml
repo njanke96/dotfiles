@@ -20,6 +20,12 @@
     <policy>cascade</policy>
   </placement>
 
+  <resistance>
+    <screenEdgeStrength>64</screenEdgeStrength>
+    <windowEdgeStrength>64</windowEdgeStrength>
+    <unSnapThreshold>64</unSnapThreshold>
+  </resistance>
+
   <theme>
     <name>gruvbox-material-dark-blocks</name>
     <icon>Gruvbox-Plus-Dark</icon>
@@ -169,13 +175,13 @@
         <then>
           <action name="ToggleOmnipresent" />
           <action name="Execute">
-            <command>sh -c 'notify-send "WM" "Omnipresense OFF"'</command>
+            <command>sh -c '/home/nathan/scripts/nag.sh "Omnipresense OFF"'</command>
           </action>
         </then>
         <else>
           <action name="ToggleOmnipresent" />
           <action name="Execute">
-            <command>sh -c 'notify-send "WM" "Omnipresense ON"'</command>
+            <command>sh -c '/home/nathan/scripts/nag.sh "Omnipresense ON"'</command>
           </action>
         </else>
       </action>
@@ -183,8 +189,7 @@
 
     <!-- obs-cli shortcuts -->
     <keybind key="W-F7">
-      <action name="Execute">
-        <command>obs-cli replay toggle</command>
+      <action name="Execute">80 <command>obs-cli replay toggle</command>
       </action>
     </keybind>
     <keybind key="W-F8">
