@@ -6,6 +6,9 @@ bufferline = "multiple"
 [editor.file-picker]
 hidden = true
 
+[editor.cursor-shape]
+insert = "bar"
+
 # git
 [keys.normal.C-g]
 # open lazygit
