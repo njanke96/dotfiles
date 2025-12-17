@@ -7,7 +7,7 @@ QT_QPA_PLATFORMTHEME=qt5ct
 
 # cursor theme
 XCURSOR_PATH=/usr/share/icons:/home/nathan/.local/share/icons
-XCURSOR_THEME=phinger-cursors-dark
+XCURSOR_THEME=Notwaita-Black
 
 # XDG env
 XDG_CACHE_HOME=/home/nathan/.cache
