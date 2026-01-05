@@ -102,11 +102,39 @@
       <action name="ToggleMaximize" />
     </keybind>
 
-    <!-- Meta + shift manipulates windows between outputs -->
+    <!-- Meta + shift + direction snapping -->
+    <!-- clear default -->
+    <keybind key="W-Left">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="None" />
+    </keybind>
+    <!-- Rebind -->
     <keybind key="W-S-Left">
-      <action name="MoveToOutput" direction="left" />
+      <action name="SnapToEdge" direction="left" combine="yes" />
     </keybind>
     <keybind key="W-S-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="SnapToEdge" direction="up" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+
+    <!-- Meta + shift + alt manipulates windows between outputs -->
+    <keybind key="W-S-A-Left">
+      <action name="MoveToOutput" direction="left" />
+    </keybind>
+    <keybind key="W-S-A-Right">
       <action name="MoveToOutput" direction="right" />
     </keybind>
 
@@ -198,7 +226,7 @@
     When one window is tiled, all other tiled windows fill the remaining area -->
 
     <!-- Meta h two thirds tile to the left -->
-    <keybind key="W-h">
+    <keybind key="W-S-h">
       <action name="If">
         <!-- If already two third from left, become one third from left, else two third from left -->
         <query>
@@ -206,41 +234,15 @@
         </query>
         <then>
           <action name="SnapToRegion" region="one-third-left" />
-          <action name="ForEach">
-            <query>
-              <tiled>any</tiled>
-              <focused>no</focused>
-            </query>
-            <query>
-              <tiled_region>*-third-*</tiled_region>
-              <focused>no</focused>
-            </query>
-            <then>
-              <action name="SnapToRegion" region="two-third-right" />
-            </then>
-          </action>
         </then>
         <else>
           <action name="SnapToRegion" region="two-third-left" />
-          <action name="ForEach">
-            <query>
-              <tiled>any</tiled>
-              <focused>no</focused>
-            </query>
-            <query>
-              <tiled_region>*-third-*</tiled_region>
-              <focused>no</focused>
-            </query>
-            <then>
-              <action name="SnapToRegion" region="one-third-right" />
-            </then>
-          </action>
         </else>
       </action>
     </keybind>
 
     <!-- Meta l two thirds tile to the left -->
-    <keybind key="W-l">
+    <keybind key="W-S-l">
       <action name="If">
         <!-- If already two third from right, become one third from right, else two third from right -->
         <query>
@@ -248,42 +250,17 @@
         </query>
         <then>
           <action name="SnapToRegion" region="one-third-right" />
-          <action name="ForEach">
-            <query>
-              <tiled>any</tiled>
-              <focused>no</focused>
-            </query>
-            <query>
-              <tiled_region>*-third-*</tiled_region>
-              <focused>no</focused>
-            </query>
-            <then>
-              <action name="SnapToRegion" region="two-third-left" />
-            </then>
-          </action>
         </then>
         <else>
           <action name="SnapToRegion" region="two-third-right" />
-          <action name="ForEach">
-            <query>
-              <tiled>any</tiled>
-              <focused>no</focused>
-            </query>
-            <query>
-              <tiled_region>*-third-*</tiled_region>
-              <focused>no</focused>
-            </query>
-            <then>
-              <action name="SnapToRegion" region="one-third-left" />
-            </then>
-          </action>
         </else>
       </action>
     </keybind>
 
     <!-- obs-cli shortcuts -->
     <keybind key="W-F7">
-      <action name="Execute">80 <command>obs-cli replay toggle</command>
+      <action name="Execute">
+        <command>obs-cli replay toggle</command>
       </action>
     </keybind>
     <keybind key="W-F8">
