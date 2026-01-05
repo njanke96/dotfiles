@@ -39,4 +39,5 @@ $env.path ++= [
   /opt/local/bin
   /Users/nathanjanke/development/flutter/bin
   /Users/nathanjanke/.cargo/bin
+  /Users/nathanjanke/.local/bin
 ]
