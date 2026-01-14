@@ -55,6 +55,9 @@ export def "get_linux_file_map" [] {
     { repo: $"rofi/config.rasi", sys: $"($config_home)/rofi/config.rasi" }
 
     # scripts
+    { repo: "scripts/can-idle.nu", sys: $"($home)/scripts/can-idle.nu" }
+    { repo: "scripts/safe-suspend.sh", sys: $"($home)/scripts/safe-suspend.sh" }
+    { repo: "scripts/screenshot.sh", sys: $"($home)/scripts/screenshot.sh" }
     { repo: "scripts/conky.sh", sys: $"($home)/scripts/conky.sh" }
     { repo: "scripts/nag.sh", sys: $"($home)/scripts/nag.sh" }
     { repo: "scripts/post-suspend.sh", sys: $"($home)/scripts/post-suspend.sh" }

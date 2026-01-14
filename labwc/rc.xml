@@ -184,9 +184,7 @@
 
     <!-- Screenshot to clipboard and a temp file -->
     <keybind key="W-s">
-      <action name="Execute">
-        <command>sh -c 'grim -g "`slurp`" -t png - | wl-copy -t image/png; wl-paste >
-          $HOME/Pictures/screenshot.png'</command>
+      <action name="Execute" command="/home/nathan/scripts/screenshot.sh">
       </action>
     </keybind>
 
