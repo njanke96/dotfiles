@@ -33,7 +33,7 @@ xfce4-panel &
 /home/nathan/scripts/conky.sh &
 
 # swaylock until xfce power manager has better wayland support
-swayidle -w timeout 900 'loginctl suspend' &
+swayidle -w timeout 900 '/home/nathan/scripts/safe-suspend.sh' &
 
 # run the after resume script now
 # to run on resume it must also be called as 'nathan' via /etc/elogind/system-sleep/post-sleep.sh (if [ "$1" = "post" ], see loginctl(1))
