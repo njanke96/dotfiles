@@ -303,7 +303,7 @@
   </keyboard>
 
   <snapping>
-    <range>32</range>
+    <range inner="32" outer="32"></range>
   </snapping>
 
   <libinput>
