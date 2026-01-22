@@ -9,7 +9,7 @@
     <!-- Tearing doesn't seem to happen with adaptivesync -->
     <!-- allowTearing yes should allow for less input lag in games? -->
     <adaptiveSync>fullscreen</adaptiveSync>
-    <allowTearing>yes</allowTearing>
+    <allowTearing>fullscreen</allowTearing>
   </core>
 
   <placement>
@@ -222,6 +222,11 @@
           </action>
         </else>
       </action>
+    </keybind>
+
+    <!-- Meta + shift + f exclusive fullscreen -->
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen" />
     </keybind>
 
     <!-- Meta h two thirds tile to the left -->
