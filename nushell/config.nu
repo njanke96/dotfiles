@@ -18,6 +18,9 @@
 #     config nu --doc | nu-highlight | less -R
 #
 
+# imports
+use std/dirs
+
 ## nu config
 $env.config.buffer_editor = "hx"
 $env.config.show_banner = false
