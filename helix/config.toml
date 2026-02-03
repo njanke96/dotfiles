@@ -9,6 +9,19 @@ hidden = true
 [editor.cursor-shape]
 insert = "bar"
 
+## alternatives for keybindings that use alt
+[keys.normal."]"]
+"]" = "select_next_sibling"
+"o" = "expand_selection"
+"i" = "shrink_selection"
+";" = "flip_selections"
+
+[keys.normal."["]
+"[" = "select_prev_sibling"
+"o" = "expand_selection"
+"i" = "shrink_selection"
+";" = "flip_selections"
+
 # git
 [keys.normal.C-g]
 # open lazygit
