@@ -18,9 +18,6 @@
 #     config nu --doc | nu-highlight | less -R
 #
 
-# imports
-use std/dirs
-
 ## nu config
 $env.config.buffer_editor = "hx"
 $env.config.show_banner = false
@@ -30,6 +27,12 @@ if (which npm | length | into bool) {
   $env.NODE_MODULES_GLOBAL = (npm root -g | str trim)
 }
 
+## OMP
 if (which oh-my-posh | length | into bool) {
   oh-my-posh init nu --config ~/.theme.omp.json
+}
+
+## zoxide
+if (which zoxide | length | into bool) {
+  zoxide init nushell | save --force ($nu.user-autoload-dirs | path join "99-zoxide.nu") 
 }
