@@ -36,3 +36,15 @@ if (which oh-my-posh | length | into bool) {
 if (which zoxide | length | into bool) {
   zoxide init nushell | save --force ($nu.user-autoload-dirs | path join "99-zoxide.nu") 
 }
+
+## yazi alias for cd
+def --env y [...args] {
+	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+	^yazi ...$args --cwd-file $tmp
+	let cwd = (open $tmp)
+	if $cwd != $env.PWD and ($cwd | path exists) {
+		cd $cwd
+	}
+	rm -fp $tmp
+}
+
