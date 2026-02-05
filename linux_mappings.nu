@@ -22,6 +22,7 @@ export def "get_linux_file_map" [] {
     { repo: "ssh-list/ssh-list_config.toml", sys: $"($home)/.ssh/ssh-list_config.toml"}
 
     # yazi
+    { repo: "yazi/theme.toml", sys: $"($config_home)/yazi/theme.toml"}
     { repo: "yazi/yazi.toml", sys: $"($config_home)/yazi/yazi.toml"}
 
     # zathura

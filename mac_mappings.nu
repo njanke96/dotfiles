@@ -17,6 +17,7 @@ export def "get_mac_file_map" [] {
     { repo: "lazygit_mac/config.yml", sys: $"($app_support)/lazygit/config.yml"}
 
     # yazi
+    { repo: "yazi/theme.toml", sys: $"($config_home)/yazi/theme.toml"}
     { repo: "yazi/yazi.toml", sys: $"($config_home)/yazi/yazi.toml"}
 
     # zathura
