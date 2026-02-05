@@ -3,19 +3,15 @@ $env.path ++= [
   $"($env.home)/.local/bin"
 ]
 
-# xbps-install alias
-def --wrapped sxbi [...args] {
-   sudo xbps-install ...$args
-}
-
-# xbps-remove alias
-def --wrapped sxbr [...args] {
-  sudo xbps-remove ...$args
-}
-
-# xbps-query alias
-def --wrapped xbq [...args] {
-  xbps-query ...$args
+# yazi alias
+def --env y [...args] {
+	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+	^yazi ...$args --cwd-file $tmp
+	let cwd = (open $tmp)
+	if $cwd != $env.PWD and ($cwd | path exists) {
+		cd $cwd
+	}
+	rm -fp $tmp
 }
 
 # snapper alias
