@@ -41,3 +41,6 @@ $env.path ++= [
   /Users/nathanjanke/.cargo/bin
   /Users/nathanjanke/.local/bin
 ]
+
+## Editor
+$env.EDITOR = "/opt/homebrew/bin/hx"
