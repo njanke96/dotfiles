@@ -1,4 +1,4 @@
-theme = "molokai"
+theme = "gruvbox_dark_hard"
 
 [editor]
 bufferline = "multiple"
@@ -8,6 +8,11 @@ hidden = true
 
 [editor.cursor-shape]
 insert = "bar"
+
+## general keybinds
+[keys.normal]
+"C-l" = ":reload-all"
+"C-r" = ":redraw"
 
 ## alternatives for keybindings that use alt
 [keys.normal."]"]
@@ -22,7 +27,7 @@ insert = "bar"
 "i" = "shrink_selection"
 ";" = "flip_selections"
 
-# git
+## git integration
 [keys.normal.C-g]
 # open lazygit
 g = [
@@ -45,7 +50,7 @@ l = [
 # in-line blame
 b = ":sh echo \"$(git log -1 --pretty=format:'%%h %%an <%%ae> %%ad %%s' $(git blame -L '%{cursor_line},+1' '%{buffer_name}' | awk '{print $1}'))\""
 
-# yazi
+## yazi integration
 [keys.normal.C-y]
 # Open file(s) in the current window
 y = [
