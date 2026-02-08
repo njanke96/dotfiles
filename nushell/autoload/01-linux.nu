@@ -8,7 +8,11 @@ def snapper-snap [description?: string] {
   snapper -c root create -c number --read-write -d $"($description | default 'snapper-snap')"
 }
 
-# ssh-list alias
-def sshl [...args] {
-  ssh-list ...$args
+# ssh without arguments opens ssh-list
+def --wrapped --env ssh [...args] {
+  if ($args | length | into bool) {
+    ^ssh ...$args
+  } else {
+    ssh-list
+  }
 }
