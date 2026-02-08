@@ -9,7 +9,7 @@
     <!-- Tearing doesn't seem to happen with adaptivesync -->
     <!-- allowTearing yes should allow for less input lag in games? -->
     <adaptiveSync>fullscreen</adaptiveSync>
-    <allowTearing>fullscreen</allowTearing>
+    <allowTearing>yes</allowTearing>
   </core>
 
   <placement>
@@ -191,6 +191,11 @@
     <!-- Toggle decorations -->
     <keybind key="W-d">
       <action name="ToggleDecorations" />
+    </keybind>
+
+    <!-- Toggle Tearing -->
+    <keybind key="W-S-t">
+      <action name="ToggleTearing" />
     </keybind>
 
     <keybind key="W-c">

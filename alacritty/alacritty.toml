@@ -16,3 +16,8 @@ lines = 32
 
 [font]
 normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\n"
