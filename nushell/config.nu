@@ -49,18 +49,19 @@ def --env y [...args] {
 }
 
 ## keybinds
-$env.config.keybindings ++= [{
-  name: zi_binding
-  modifier: CONTROL
-  keycode: Char_u
-  mode: emacs
-  event: [
-    { edit: Clear }
-    {
-      edit: InsertString,
-      value: "zi"
-    }
-    { send: Enter }
-  ]
-}]
+# This is dumb
+# $env.config.keybindings ++= [{
+#   name: zi_binding
+#   modifier: CONTROL
+#   keycode: Char_z
+#   mode: emacs
+#   event: [
+#     { edit: Clear }
+#     {
+#       edit: InsertString,
+#       value: "zi"
+#     }
+#     { send: Enter }
+#   ]
+# }]
 
