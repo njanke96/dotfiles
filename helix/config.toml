@@ -1,7 +1,7 @@
 theme = "gruvbox_dark_hard_transparent"
 
 [editor]
-bufferline = "multiple"
+line-number = "relative"
 
 [editor.file-picker]
 hidden = true
@@ -11,8 +11,7 @@ insert = "bar"
 
 ## general keybinds
 [keys.normal]
-"C-l" = ":reload-all"
-"C-r" = ":redraw"
+"C-r" = ":toggle-option line-number absolute relative"
 
 ## alternatives for keybindings that use alt
 [keys.normal."]"]
