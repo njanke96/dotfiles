@@ -8,6 +8,7 @@ export def "get_linux_file_map" [] {
     # helix
     { repo: "helix/config.toml", sys: $"($config_home)/helix/config.toml" }
     { repo: "helix/languages.toml", sys: $"($config_home)/helix/languages.toml" }
+    { repo: "helix/themes/gruvbox_dark_hard_transparent.toml", sys: $"($config_home)/helix/themes/gruvbox_dark_hard_transparent.toml" }
 
     # nushell
     { repo: "nushell/config.nu", sys: $"($config_home)/nushell/config.nu" }

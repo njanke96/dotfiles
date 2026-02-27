@@ -1,4 +1,4 @@
-theme = "gruvbox_dark_hard"
+theme = "gruvbox_dark_hard_transparent"
 
 [editor]
 bufferline = "multiple"
