@@ -6,9 +6,11 @@
     <!-- 8px gap between snapped winodws -->
     <gap>8</gap>
 
-    <!-- Tearing doesn't seem to happen with adaptivesync -->
-    <!-- allowTearing yes should allow for less input lag in games? -->
-    <adaptiveSync>fullscreen</adaptiveSync>
+    <!-- Currently my monitor sucks and flickers with adaptive sync -->
+    <!-- It also causes issues with screen capture -->
+    <adaptiveSync>no</adaptiveSync>
+
+    <!-- Always allow tearing when the application requests it -->
     <allowTearing>yes</allowTearing>
   </core>
 
