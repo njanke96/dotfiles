@@ -16,6 +16,9 @@
     <item label="Windows">
       <action name="Execute" command="/home/nathan/scripts/windows.sh" />
     </item>
+    <item label="Macbook SSH">
+      <action name="Execute" command="/home/nathan/scripts/alacritty_ssh_macbook.sh" />
+    </item>
 
     <separator />
 
