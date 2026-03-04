@@ -331,5 +331,11 @@
     <windowRule identifier="spotify-qt">
       <action name="SetDecorations" decorations="border" forceSSD="yes" />
     </windowRule>
+    <windowRule identifier="jetbrains-idea">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+    <windowRule identifier="obsidian">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
   </windowRules>
 </labwc_config>
