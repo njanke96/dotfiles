@@ -5,7 +5,7 @@ import = [
 live_config_reload = true
 
 [terminal]
-shell = { program = "/usr/bin/zellij", args = [] }
+shell = { program = "sh", args = ["-c", "zellij || /usr/bin/nu"] }
 
 [window]
 opacity = 0.97
