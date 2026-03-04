@@ -22,7 +22,7 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["helix", "distrobox"]
+disable = ["helix", "distrobox", "jetbrains_toolbox"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
