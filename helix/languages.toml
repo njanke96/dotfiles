@@ -16,3 +16,31 @@ auto-format = true
 [[language]]
 name = "python"
 language-servers = [ "basedpyright", "ruff" ]
+
+[[language]]
+name = "svelte"
+language-servers = [ "vscode-eslint-language-server", "svelteserver" ]
+formatter = { command = "prettier", args = ['--parser', 'svelte'] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ "vscode-eslint-language-server", "typescript-language-server" ]
+formatter = { command = "prettier", args = ['--parser', 'typescript'] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [ "vscode-eslint-language-server", "typescript-language-server" ]
+formatter = { command = "prettier", args = ['--parser', 'typescript'] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ['--parser', 'json'] }
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = "prettier", args = ['--parser', 'html'] }
+auto-format = true
