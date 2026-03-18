@@ -190,6 +190,13 @@
       </action>
     </keybind>
 
+    <!-- Screen record entire screen -->
+    <keybind key="W-w">
+      <action name="Execute"
+        command="alacritty -T 'Screen Recording' -e nu /home/nathan/scripts/screenrec.nu">
+      </action>
+    </keybind>
+
     <!-- Toggle decorations -->
     <keybind key="W-d">
       <action name="ToggleDecorations" />
