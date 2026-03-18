@@ -1,4 +1,4 @@
-$env.path ++= [
+$env.path = $env.path | append [
   $"($env.home)/.cargo/bin"
   $"($env.home)/.local/bin"
 ]
