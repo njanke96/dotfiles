@@ -18,12 +18,6 @@ name = "python"
 language-servers = [ "basedpyright", "ruff" ]
 
 [[language]]
-name = "svelte"
-language-servers = [ "vscode-eslint-language-server", "svelteserver" ]
-formatter = { command = "prettier", args = ['--parser', 'svelte'] }
-auto-format = true
-
-[[language]]
 name = "javascript"
 language-servers = [ "vscode-eslint-language-server", "typescript-language-server" ]
 formatter = { command = "prettier", args = ['--parser', 'typescript'] }
@@ -42,5 +36,12 @@ auto-format = true
 
 [[language]]
 name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
 formatter = { command = "prettier", args = ['--parser', 'html'] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = true
