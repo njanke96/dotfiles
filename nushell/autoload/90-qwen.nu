@@ -1,4 +1,11 @@
 def qq [...query: string] {
+  # start ollama serve if needed
+  let pid = (pgrep -f 'ollama serve' | complete | get stdout)
+
+  if not ($pid | str length | into bool) {
+    job spawn { ollama serve }
+  }
+
   let prompt = (" Respond with only the command, as I will execute your response verbatim in my terminal. I am using nushell."
     + " Do not include any markup of any kind, including markdown, in the answer, only the command."
     + " Answer ONLY with the final command, do not tell me what you are thinking, only answer with the final command I can run in my shell."
