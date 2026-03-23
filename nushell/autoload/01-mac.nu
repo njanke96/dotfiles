@@ -17,7 +17,7 @@ $env.MANPATH = $env.MANPATH? | default "" | split row ":" | append "/opt/homebre
 $env.INFOPATH = $env.INFOPATH? | default "" | split row ":" | append "/opt/homebrew/share/info" | str join ":"
 
 ## Add homebrew paths
-$env.path ++= [
+$env.path = $env.path | append [
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
 ]
@@ -34,12 +34,13 @@ if ($gcloud_bin_dir | path exists) {
     $env.path ++= [$gcloud_bin_dir]
 }
 ## General Path
-$env.path ++= [
+$env.path = $env.path | append [
   /opt/local/sbin
   /opt/local/bin
   /Users/nathanjanke/development/flutter/bin
   /Users/nathanjanke/.cargo/bin
   /Users/nathanjanke/.local/bin
+  /Users/nathanjanke/.opencode/bin
 ]
 
 ## Editor
