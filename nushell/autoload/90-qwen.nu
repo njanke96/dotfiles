@@ -4,6 +4,8 @@ def qq [...query: string] {
 
   if not ($pid | str length | into bool) {
     job spawn { ollama serve }
+    # give it a chance to start
+    sleep 3sec
   }
 
   let prompt = (" Respond with only the command, as I will execute your response verbatim in my terminal. I am using nushell."

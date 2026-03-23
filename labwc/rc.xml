@@ -197,6 +197,13 @@
       </action>
     </keybind>
 
+    <!-- Screen record slurp region -->
+    <keybind key="W-S-w">
+      <action name="Execute"
+        command="alacritty -T 'Screen Recording' -e nu /home/nathan/scripts/screenrec.nu --select-region">
+      </action>
+    </keybind>
+
     <!-- Toggle decorations -->
     <keybind key="W-d">
       <action name="ToggleDecorations" />
@@ -342,6 +349,9 @@
       <action name="SetDecorations" decorations="border" forceSSD="yes" />
     </windowRule>
     <windowRule identifier="obsidian">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+    <windowRule identifier="bruno">
       <action name="SetDecorations" decorations="border" forceSSD="yes" />
     </windowRule>
   </windowRules>
