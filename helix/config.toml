@@ -2,6 +2,7 @@ theme = "gruvbox_dark_hard_transparent"
 
 [editor]
 line-number = "relative"
+undercurl = true
 
 [editor.file-picker]
 hidden = true
