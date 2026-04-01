@@ -64,6 +64,7 @@ export def "get_zephy_file_map" [] {
     { repo: "scripts/nag.sh", sys: $"($home)/scripts/nag.sh" }
     { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }
     { repo: "scripts/volume.nu", sys: $"($home)/scripts/volume.nu" }
+    { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
