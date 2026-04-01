@@ -41,6 +41,7 @@ $env.path = $env.path | append [
   /Users/nathanjanke/.cargo/bin
   /Users/nathanjanke/.local/bin
   /Users/nathanjanke/.opencode/bin
+  /Users/nathanjanke/.deno/bin
 ]
 
 ## Editor
