@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+
+<labwc_config>
+
+  <core>
+    <!-- 8px gap between snapped winodws -->
+    <gap>8</gap>
+
+    <!-- Currently my monitor sucks and flickers with adaptive sync -->
+    <!-- It also causes issues with screen capture -->
+    <adaptiveSync>no</adaptiveSync>
+
+    <!-- Always allow tearing when the application requests it -->
+    <allowTearing>yes</allowTearing>
+  </core>
+
+  <placement>
+    <!--
+    Changed from xfce's default 'automatic' which seems to just open
+    new windows in the top left corner of the active display.
+    -->
+    <policy>cascade</policy>
+  </placement>
+
+  <resistance>
+    <screenEdgeStrength>64</screenEdgeStrength>
+    <windowEdgeStrength>64</windowEdgeStrength>
+    <unSnapThreshold>64</unSnapThreshold>
+  </resistance>
+
+  <theme>
+    <name>gruvbox-material-dark-blocks</name>
+    <icon>Gruvbox-Plus-Dark</icon>
+    <fallbackAppIcon>window</fallbackAppIcon>
+    <font name="Noto Sans" size="10" />
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
+  </theme>
+
+  <desktops number="4" />
+
+  <regions>
+    <region name="one-third-left" x="0%" y="0%" width="33%" height="100%" />
+    <region name="two-third-left" x="0%" y="0%" width="67%" height="100%" />
+    <region name="one-third-right" x="67%" y="0%" width="33%" height="100%" />
+    <region name="two-third-right" x="33%" y="0%" width="67%" height="100%" />
+    <region name="one-third-top" x="0%" y="0%" width="100%" height="33%" />
+    <region name="two-third-top" x="0%" y="0%" width="100%" height="67%" />
+    <region name="one-third-bottom" x="0%" y="67%" width="100%" height="33%" />
+    <region name="two-third-bottom" x="0%" y="33%" width="100%" height="66%" />
+  </regions>
+
+  <keyboard>
+    <!-- Load the labwc defaults -->
+    <default />
+
+    <!-- toggle keybinds for the current window -->
+    <keybind key="W-S-k">
+      <action name="ToggleKeybinds" />
+    </keybind>
+
+    <!-- open the terminal editor -->
+    <keybind key="W-Return">
+      <action name="Execute" command="alacritty" />
+    </keybind>
+
+    <!-- Rofi -->
+    <keybind key="W-space">
+      <action name="Execute" command="rofi -show drun" />
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute" command="rofi -show run" />
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute" command="rofi -show window" />
+    </keybind>
+
+    <numlock>on</numlock>
+
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="nu /home/nathan/scripts/volume.nu nag down" />
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="nu /home/nathan/scripts/volume.nu nag up" />
+    </keybind>
+
+    <!-- Mute simply opens pavucontrol, works for now -->
+    <keybind key="XF86_AudioMute">
+      <action name="Execute">
+        <command>alacritty -T wiremix --class wiremix -e wiremix --tab output</command>
+      </action>
+    </keybind>
+    <!-- Meta + mute opens levels -->
+    <keybind key="W-XF86_AudioMute">
+      <action name="Execute">
+        <command>alacritty -T wiremix --class wiremix -e wiremix --tab playback</command>
+      </action>
+    </keybind>
+
+    <!-- Window shortcuts -->
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleMaximize" />
+    </keybind>
+
+    <!-- Meta + shift + direction snapping -->
+    <!-- clear default -->
+    <keybind key="W-Left">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="None" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="None" />
+    </keybind>
+    <!-- Rebind -->
+    <keybind key="W-S-Left">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="SnapToEdge" direction="up" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+
+    <!-- Meta + shift + alt manipulates windows between outputs -->
+    <keybind key="W-S-A-Left">
+      <action name="MoveToOutput" direction="left" />
+    </keybind>
+    <keybind key="W-S-A-Right">
+      <action name="MoveToOutput" direction="right" />
+    </keybind>
+
+    <!-- Meta + alt manipulates windows between v-desktops -->
+    <keybind key="W-A-Left">
+      <action name="SendToDesktop" to="left" wrap="yes" />
+    </keybind>
+    <keybind key="W-A-Right">
+      <action name="SendToDesktop" to="right" wrap="yes" />
+    </keybind>
+    <keybind key="W-A-1">
+      <action name="SendToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-A-2">
+      <action name="SendToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-A-3">
+      <action name="SendToDesktop" to="3" />
+    </keybind>
+    <keybind key="W-A-4">
+      <action name="SendToDesktop" to="4" />
+    </keybind>
+
+    <!-- Control + meta navigates between v-desktops -->
+    <keybind key="C-W-Left">
+      <action name="GoToDesktop" to="left" wrap="yes" />
+    </keybind>
+    <keybind key="C-W-Right">
+      <action name="GoToDesktop" to="right" wrap="yes" />
+    </keybind>
+    <keybind key="C-W-1">
+      <action name="GoToDesktop" to="1" />
+    </keybind>
+    <keybind key="C-W-2">
+      <action name="GoToDesktop" to="2" />
+    </keybind>
+    <keybind key="C-W-3">
+      <action name="GoToDesktop" to="3" />
+    </keybind>
+    <keybind key="C-W-4">
+      <action name="GoToDesktop" to="4" />
+    </keybind>
+
+    <!-- Screenshot to clipboard and a temp file -->
+    <keybind key="W-s">
+      <action name="Execute" command="/home/nathan/scripts/screenshot.sh">
+      </action>
+    </keybind>
+
+    <!-- Screen record entire screen -->
+    <keybind key="W-w">
+      <action name="Execute"
+        command="alacritty -T 'Screen Recording' -e nu /home/nathan/scripts/screenrec.nu">
+      </action>
+    </keybind>
+
+    <!-- Screen record slurp region -->
+    <keybind key="W-S-w">
+      <action name="Execute"
+        command="alacritty -T 'Screen Recording' -e nu /home/nathan/scripts/screenrec.nu --select-region">
+      </action>
+    </keybind>
+
+    <!-- Toggle decorations -->
+    <keybind key="W-d">
+      <action name="ToggleDecorations" />
+    </keybind>
+
+    <!-- Toggle Tearing -->
+    <keybind key="W-S-t">
+      <action name="ToggleTearing" />
+    </keybind>
+
+    <keybind key="W-c">
+      <action name="AutoPlace" policy="center" />
+    </keybind>
+
+    <!-- Meta + p always on top -->
+    <!-- I wish this had a query as well so I could use the same notify as below -->
+    <keybind key="W-p">
+      <action name="ToggleAlwaysOnTop" />
+    </keybind>
+
+    <!-- Meta + o omnipresence -->
+    <keybind key="W-o">
+      <action name="If">
+        <query>
+          <omnipresent>yes</omnipresent>
+        </query>
+        <then>
+          <action name="ToggleOmnipresent" />
+          <action name="Execute">
+            <command>sh -c '/home/nathan/scripts/nag.sh "Omnipresense OFF"'</command>
+          </action>
+        </then>
+        <else>
+          <action name="ToggleOmnipresent" />
+          <action name="Execute">
+            <command>sh -c '/home/nathan/scripts/nag.sh "Omnipresense ON"'</command>
+          </action>
+        </else>
+      </action>
+    </keybind>
+
+    <!-- Meta + shift + f exclusive fullscreen -->
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+
+    <!-- Meta h two thirds tile to the left -->
+    <keybind key="W-S-h">
+      <action name="If">
+        <query>
+          <tiled_region>two-third-left</tiled_region>
+        </query>
+        <then>
+          <action name="SnapToRegion" region="one-third-left" />
+        </then>
+        <else>
+          <action name="SnapToRegion" region="two-third-left" />
+        </else>
+      </action>
+    </keybind>
+
+    <!-- Meta l two thirds tile to the left -->
+    <keybind key="W-S-l">
+      <action name="If">
+        <query>
+          <tiled_region>two-third-right</tiled_region>
+        </query>
+        <then>
+          <action name="SnapToRegion" region="one-third-right" />
+        </then>
+        <else>
+          <action name="SnapToRegion" region="two-third-right" />
+        </else>
+      </action>
+    </keybind>
+
+    <!-- Meta k two thirds tile to the top -->
+    <keybind key="W-S-k">
+      <action name="If">
+        <query>
+          <tiled_region>two-third-top</tiled_region>
+        </query>
+        <then>
+          <action name="SnapToRegion" region="one-third-top" />
+        </then>
+        <else>
+          <action name="SnapToRegion" region="two-third-top" />
+        </else>
+      </action>
+    </keybind>
+
+    <!-- Meta j two thirds tile to the bottom -->
+    <keybind key="W-S-j">
+      <action name="If">
+        <query>
+          <tiled_region>two-third-bottom</tiled_region>
+        </query>
+        <then>
+          <action name="SnapToRegion" region="one-third-bottom" />
+        </then>
+        <else>
+          <action name="SnapToRegion" region="two-third-bottom" />
+        </else>
+      </action>
+    </keybind>
+
+    <!-- obs-cli shortcuts -->
+    <!-- <keybind key="W-F7"> -->
+      <!-- <action name="Execute"> -->
+        <!-- <command>obs-cli replay toggle</command> -->
+      <!-- </action> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="W-F8"> -->
+      <!-- <action name="Execute"> -->
+        <!-- <command>obs-cli replay save</command> -->
+      <!-- </action> -->
+    <!-- </keybind> -->
+    <!-- <keybind key="W-F9"> -->
+      <!-- <action name="Execute"> -->
+        <!-- <command>obs-cli record toggle</command> -->
+      <!-- </action> -->
+    <!-- </keybind> -->
+  </keyboard>
+
+  <snapping>
+    <range inner="32" outer="32"></range>
+  </snapping>
+
+  <libinput>
+    <!-- Mouse config -->
+    <device category="non-touch">
+      <pointerSpeed>0.0</pointerSpeed>
+      <accelProfile>flat</accelProfile>
+    </device>
+
+    <!-- Touchpad config -->
+    <device category="touchpad">
+      <naturalScroll>yes</naturalScroll>
+      <clickMethod>clickfinger</clickMethod>
+    </device>
+  </libinput>
+
+  <!-- Fix apps with shitty client-side decorations -->
+  <windowRules>
+    <windowRule identifier="spotify-qt">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+    <windowRule identifier="jetbrains-idea">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+    <windowRule identifier="obsidian">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+    <windowRule identifier="bruno">
+      <action name="SetDecorations" decorations="border" forceSSD="yes" />
+    </windowRule>
+  </windowRules>
+</labwc_config>

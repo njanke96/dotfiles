@@ -1,4 +1,5 @@
 use linux_mappings.nu get_linux_file_map
+use linux_zephy_mappings.nu get_zephy_file_map
 use mac_mappings.nu get_mac_file_map
 
 def is_file [file_path: string] {
@@ -6,15 +7,30 @@ def is_file [file_path: string] {
   return $isfile
 }
 
+def is_dir [file_path: string] {
+  let isdir = ($"($file_path)" | path type) == 'dir'
+  return $isdir
+}
+
 export def get_os_mappings [] {
   mut mappings = []
 
   if (sys host | get long_os_version | str contains -i linux) {
     print "Detected os is Linux"
-    $mappings = get_linux_file_map 
+    # let choice = ([Desktop Zephy] | input list)
+    let hostname = open /etc/hostname | into string | str trim
+
+    match $hostname {
+      "zephy" => { $mappings = get_zephy_file_map } 
+      _ => { $mappings = get_linux_file_map },
+    }
   } else if (sys host | get long_os_version | str contains -i macos) {
     print "Detected os is macOS"
     $mappings = get_mac_file_map
+  }
+
+  if ($mappings | length) < 1 {
+    print "No mappings detected, check os and hostname"
   }
 
   return $mappings
@@ -48,6 +64,10 @@ export def safe_copy [source: string, destination: string] {
       print "Proceeding with copy..."
     }
   } else {
+    if not (is_dir ($destination | path dirname )) {
+      print $"Creating directory ($destination | path dirname)"
+      mkdir $"($destination | path dirname)"
+    } 
     print $"Destination '($destination)' does not exist. Proceeding with copy.."
   }
 
