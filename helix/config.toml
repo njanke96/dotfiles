@@ -13,6 +13,7 @@ insert = "bar"
 ## general keybinds
 [keys.normal]
 "C-r" = ":toggle-option line-number absolute relative"
+"A-w" = ":toggle-option soft-wrap.enable"
 
 ## alternatives for keybindings that use alt
 [keys.normal."]"]
