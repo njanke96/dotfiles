@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-def main [--select-region] {
+def main [--codec: string = 'av1' --select-region] {
   let filename = $"/home/nathan/Videos/Recoding_(date now | format date '%b_%d_%Hh_%Mm_%Ss').mkv"
 
   let pa_module_loaded: bool = (sh -c `pactl list sinks | grep -q "Name: wl-screenrec-input" && echo "true" || echo "false"`) | into bool
@@ -15,5 +15,5 @@ def main [--select-region] {
     _ => ["-g" $"(slurp)"]
   }
 
-  exec wl-screenrec ...($capture_target) --codec av1 --audio --audio-device wl-screenrec-input.monitor --audio-codec flac --filename ($filename)
+  exec wl-screenrec ...($capture_target) --codec ($codec) --audio --audio-device wl-screenrec-input.monitor --audio-codec opus --audio-bitrate "40 kB" --filename ($filename)
 }
