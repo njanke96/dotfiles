@@ -32,7 +32,7 @@
     <name>gruvbox-material-dark-blocks</name>
     <icon>Gruvbox-Plus-Dark</icon>
     <fallbackAppIcon>window</fallbackAppIcon>
-    <font name="Noto Sans" size="10" />
+    <font name="Open Sans" size="10" />
     <dropShadows>yes</dropShadows>
     <dropShadowsOnTiled>yes</dropShadowsOnTiled>
   </theme>

@@ -47,6 +47,11 @@ export def "get_linux_file_map" [] {
     # containers
     { repo: $"containers/containers.conf", sys: $"($config_home)/containers/containers.conf" }
 
+    # gtk
+    { repo: $"gtk/.gtkrc-2.0", sys: $"($home)/.gtkrc-2.0"}
+    { repo: $"gtk/gtk-3.0/settings.ini", sys: $"($config_home)/gtk-3.0/settings.ini"}
+    { repo: $"gtk/gtk-4.0/settings.ini", sys: $"($config_home)/gtk-4.0/settings.ini"}
+
     # labwc
     { repo: $"labwc/autostart", sys: $"($config_home)/labwc/autostart" }
     { repo: $"labwc/environment", sys: $"($config_home)/labwc/environment" }

@@ -50,6 +50,11 @@ export def "get_zephy_file_map" [] {
     { repo: $"labwc_zephy/menu.xml", sys: $"($config_home)/labwc/menu.xml" }
     { repo: $"labwc_zephy/rc.xml", sys: $"($config_home)/labwc/rc.xml" }
 
+    # gtk
+    { repo: $"gtk/.gtkrc-2.0", sys: $"($home)/.gtkrc-2.0"}
+    { repo: $"gtk/gtk-3.0/settings.ini", sys: $"($config_home)/gtk-3.0/settings.ini"}
+    { repo: $"gtk/gtk-4.0/settings.ini", sys: $"($config_home)/gtk-4.0/settings.ini"}
+
     # mpv
     { repo: $"mpv/mpv.conf", sys: $"($config_home)/mpv/mpv.conf" }
 
