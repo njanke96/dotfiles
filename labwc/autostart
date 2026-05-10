@@ -24,6 +24,9 @@ xfsettingsd &
 # XFCE Panel
 xfce4-panel &
 
+# nm-applet
+nm-applet &
+
 # audio idle inhibit (blocks loginctl suspend when audio is playing)
 # points to a script that just runs sway-audio-idle-inhibit in a loop in case
 # it crashes

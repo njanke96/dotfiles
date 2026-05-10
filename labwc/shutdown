@@ -6,6 +6,8 @@ pgrep -f pipewire | xargs kill &>/dev/null
 pgrep -f xfce-polkit | xargs kill &>/dev/null
 pgrep -f xfsettingsd | xargs kill &>/dev/null
 pgrep -f xfce4-notifyd | xargs kill &>/dev/null
+pgrep -f xfce4-panel | xargs kill &>/dev/null
+pgrep -f nm-applet | xargs kill &>/dev/null
 pgrep -f swayidle | xargs kill &>/dev/null
 pgrep -i conky | xargs kill &>/dev/null
 pgrep -i sway-audio-idle | xargs kill &>/dev/null
