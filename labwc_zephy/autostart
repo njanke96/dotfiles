@@ -2,6 +2,7 @@
 
 # Background wallpapers
 swaybg -o eDP-1 -m fill -i /home/nathan/Pictures/wallpapers/gruvmoon.png &
+swaybg -o HDMI-A-1 -m fill -i /home/nathan/Pictures/wallpapers/gruvmoon.png &
 
 # Pipewire
 pipewire &

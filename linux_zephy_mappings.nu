@@ -55,9 +55,6 @@ export def "get_zephy_file_map" [] {
     { repo: $"gtk/gtk-3.0/settings.ini", sys: $"($config_home)/gtk-3.0/settings.ini"}
     { repo: $"gtk/gtk-4.0/settings.ini", sys: $"($config_home)/gtk-4.0/settings.ini"}
 
-    # mpv
-    { repo: $"mpv/mpv.conf", sys: $"($config_home)/mpv/mpv.conf" }
-
     # rofi
     { repo: $"rofi/config.rasi", sys: $"($config_home)/rofi/config.rasi" }
 
@@ -70,9 +67,6 @@ export def "get_zephy_file_map" [] {
     { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }
     { repo: "scripts/volume.nu", sys: $"($home)/scripts/volume.nu" }
     { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
-
-    # topgrade
-    { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
   ]
   
   return $file_map
