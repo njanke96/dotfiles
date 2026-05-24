@@ -57,6 +57,6 @@ blueman-applet &
   --command=com.discordapp.Discord \
   --file-forwarding com.discordapp.Discord &
 
-# start neochat
-/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=neochat --file-forwarding org.kde.neochat &
-
+# start matrix clients
+# /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=neochat --file-forwarding org.kde.neochat &
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/element --file-forwarding im.riot.Riot &
