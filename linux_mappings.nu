@@ -85,6 +85,9 @@ export def "get_linux_file_map" [] {
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
+
+    # mangohud
+    { repo: "MangoHud/MangoHud.conf", sys: $"($config_home)/MangoHud/MangoHud.conf" }
   ]
   
   return $file_map
