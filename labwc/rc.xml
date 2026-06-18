@@ -10,8 +10,8 @@
     <!-- It also causes issues with screen capture -->
     <adaptiveSync>no</adaptiveSync>
 
-    <!-- Always allow tearing when the application requests it -->
-    <allowTearing>yes</allowTearing>
+    <!-- Force tearing seems to resolve artifacts with mouse movement in gamescope -->
+    <allowTearing>fullscreenForced</allowTearing>
   </core>
 
   <placement>

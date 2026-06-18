@@ -15,3 +15,6 @@ XDG_CONFIG_DIRS=/etc/xdg
 XDG_CONFIG_HOME=/home/nathan/.config
 XDG_DATA_HOME=/home/nathan/.local/share
 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share:/home/nathan/.local/share/flatpak/exports/share
+
+# Only for steam within labwc (desktop or gamescope-bigpicture)
+PROTON_ENABLE_WAYLAND=1
