@@ -88,6 +88,9 @@ export def "get_linux_file_map" [] {
 
     # mangohud
     { repo: "MangoHud/MangoHud.conf", sys: $"($config_home)/MangoHud/MangoHud.conf" }
+
+    # xdg desktop portal
+    { repo: "xdg-desktop-portal/portals.conf", sys: $"($config_home)/xdg-desktop-portal/portals.conf" }
   ]
   
   return $file_map
