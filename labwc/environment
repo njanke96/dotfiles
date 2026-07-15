@@ -18,3 +18,4 @@ XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/n
 
 # Only for steam within labwc (desktop or gamescope-bigpicture)
 PROTON_ENABLE_WAYLAND=1
+SDL_VIDEODRIVER=wayland
