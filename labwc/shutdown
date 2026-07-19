@@ -9,3 +9,6 @@ pgrep -f nm-applet | xargs kill &>/dev/null
 pgrep -f swayidle | xargs kill &>/dev/null
 pgrep -i sway-audio-idle | xargs kill &>/dev/null
 pgrep -i saii | xargs kill &>/dev/null
+
+# Sometimes appimages don't fully quit
+pgrep -i AppRun | xargs kill &>/dev/null
