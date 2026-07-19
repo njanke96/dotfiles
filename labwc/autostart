@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Kanshi for display mode and position configuration
+kanshi &
+
 # Background wallpapers
 swaybg -o DP-1 -i /home/nathan/Pictures/wallpapers/gruvmoon.png &
 swaybg -o DP-2 -i /home/nathan/Pictures/wallpapers/gruvmoon.png -m fill &
@@ -12,14 +15,6 @@ pipewire &
 
 # Ironbar
 ironbar &
-
-# XFsettingsd
-# 
-# Unfortunately this uses xfce settings for wayland display config,
-# even though at this time I would rather use kanshi
-#
-# I still need this for some panel functionality
-xfsettingsd &
 
 # SwayNotificationCenter
 swaync &

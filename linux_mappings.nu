@@ -52,6 +52,9 @@ export def "get_linux_file_map" [] {
     { repo: $"gtk/gtk-3.0/settings.ini", sys: $"($config_home)/gtk-3.0/settings.ini"}
     { repo: $"gtk/gtk-4.0/settings.ini", sys: $"($config_home)/gtk-4.0/settings.ini"}
 
+    # kanshi
+    { repo: $"kanshi/config", sys: $"($config_home)/kanshi/config" }
+
     # labwc
     { repo: $"labwc/autostart", sys: $"($config_home)/labwc/autostart" }
     { repo: $"labwc/environment", sys: $"($config_home)/labwc/environment" }

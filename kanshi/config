@@ -1,0 +1,16 @@
+profile {
+	output HDMI-A-2 disable
+
+	output DP-2 {
+	    enable
+		mode 1920x1080@74.986000Hz
+		position 0,0
+		transform 270
+	}
+
+	output DP-1 {
+		enable
+		position 1080,0
+		mode 3440x1440@143.975006Hz
+	}
+}
