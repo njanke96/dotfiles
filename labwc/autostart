@@ -21,8 +21,8 @@ ironbar &
 # I still need this for some panel functionality
 xfsettingsd &
 
-# xfce notifications, works perfectly
-/usr/lib64/xfce4/notifyd/xfce4-notifyd &
+# SwayNotificationCenter
+swaync &
 
 # nm-applet
 nm-applet &

@@ -6,12 +6,18 @@ monitors:
     anchor_to_edges: true
     layer: "top"
     start:
-      - type: "menu"
-        label: "Applications"
-        label_icon: "void-logo"
-        label_icon_size: 18
-        app_icon_size: 18
-        height: 1000
+      - type: "custom"
+        name: "app-launcher"
+        bar:
+          - type: "button"
+            name: "app-launcher-button"
+            on_click: '!$HOME/scripts/rofi-appmenu.sh'
+            widgets:
+              - type: "image"
+                src: "void-logo"
+                size: 18
+              - type: "label"
+                label: " Applications" 
     center:
       - type: "focused"
         icon_size: 16
@@ -162,3 +168,5 @@ monitors:
                     size: 16
                   - type: "label"
                     label: " Power Off"
+      - type: notifications
+        show_count: true

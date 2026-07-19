@@ -86,6 +86,7 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/x3d_get_mode.sh", sys: $"($home)/scripts/x3d_get_mode.sh" }
     { repo: "scripts/alacritty_ssh_macbook.sh", sys: $"($home)/scripts/alacritty_ssh_macbook.sh" }
     { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
+    { repo: "scripts/rofi-appmenu.sh", sys: $"($home)/scripts/rofi-appmenu.sh" }
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
