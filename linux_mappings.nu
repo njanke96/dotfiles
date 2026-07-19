@@ -59,6 +59,10 @@ export def "get_linux_file_map" [] {
     { repo: $"labwc/menu.xml", sys: $"($config_home)/labwc/menu.xml" }
     { repo: $"labwc/rc.xml", sys: $"($config_home)/labwc/rc.xml" }
 
+    # ironbar
+    { repo: $"ironbar/config.yaml", sys: $"($config_home)/ironbar/config.yaml" }
+    { repo: $"ironbar/style.css", sys: $"($config_home)/ironbar/style.css" }
+
     # mpv
     { repo: $"mpv/mpv.conf", sys: $"($config_home)/mpv/mpv.conf" }
 

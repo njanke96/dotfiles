@@ -10,6 +10,9 @@ pipewire &
 # XFCE polkit
 /usr/libexec/xfce-polkit &
 
+# Ironbar
+ironbar &
+
 # XFsettingsd
 # 
 # Unfortunately this uses xfce settings for wayland display config,
@@ -20,9 +23,6 @@ xfsettingsd &
 
 # xfce notifications, works perfectly
 /usr/lib64/xfce4/notifyd/xfce4-notifyd &
-
-# XFCE Panel
-xfce4-panel &
 
 # nm-applet
 nm-applet &
@@ -42,12 +42,9 @@ swayidle -w timeout 900 '/home/nathan/scripts/safe-suspend.sh' &
 # to run on resume it must also be called as 'nathan' via /etc/elogind/system-sleep/post-sleep.sh (if [ "$1" = "post" ], see loginctl(1))
 /home/nathan/scripts/post-suspend.sh
 
-# fixes gparted-pkexec
-xhost +local:
-
 # sleep before starting applications (mostly for pipewire to finish starting)
 # (there is definitely a better solution for this)
-sleep 5
+sleep 3
 
 # blueman applet
 blueman-applet &

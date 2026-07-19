@@ -1,0 +1,164 @@
+monitors:
+  DP-1:
+    name: "top"
+    position: "top"
+    height: 24
+    anchor_to_edges: true
+    layer: "top"
+    start:
+      - type: "menu"
+        label: "Applications"
+        label_icon: "void-logo"
+        label_icon_size: 18
+        app_icon_size: 18
+        height: 1000
+    center:
+      - type: "focused"
+        icon_size: 16
+    end:
+      - type: "workspaces"
+      - type: "clock"
+        format: "%H:%M:%S"
+        format_popup: "%H:%M:%S"
+      - type: "sys_info"
+        format:
+          - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
+          - "DRAM: {memory_percent}%, {temp_c@spd5118 temp1}°C"
+          - "GPU: {temp_c@amdgpu edge}°C"
+        interval: 2
+      - type: "tray"
+      - type: "custom"
+        name: "caffeine"
+        bar:
+          - type: "button"
+            name: "caffeine-btn"
+            class: "custom-menu-btn"
+            on_click: "popup:toggle"
+            widgets:
+              - type: "image"
+                src: "caffeine-cup-full"
+                size: 18
+        popup:
+          - type: "box"
+            orientation: "vertical"
+            widgets:
+              - type: "button"
+                class: "caffeine-item"
+                on_click: '!ironbar bar top hide-popup && elogind-inhibit --what "idle:sleep" --why="This coffee lasts 8 hours" sleep 28800'
+                widgets:
+                  - type: "image"
+                    src: "caffeine-cup-full"
+                    size: 16
+                  - type: "label"
+                    label: " Caffeinate 8h"
+              - type: "button"
+                class: "caffeine-item"
+                on_click: '!ironbar bar top hide-popup && elogind-inhibit --what "idle:sleep" --why="This coffee lasts 1 hour" sleep 3600'
+                widgets:
+                  - type: "image"
+                    src: "caffeine-cup-full"
+                    size: 16
+                  - type: "label"
+                    label: " Caffeinate 1h"
+              - type: "button"
+                class: "caffeine-item"
+                on_click: '!ironbar bar top hide-popup && elogind-inhibit --what "idle:sleep" --why="This coffee lasts 30 minutes" sleep 1800'
+                widgets:
+                  - type: "image"
+                    src: "caffeine-cup-full"
+                    size: 16
+                  - type: "label"
+                    label: " Caffeinate 30m"
+              - type: "button"
+                class: "caffeine-item"
+                on_click: "!ironbar bar top hide-popup && pgrep -f elogind-inhibit | xargs kill"
+                widgets:
+                  - type: "image"
+                    src: "caffeine-cup-empty"
+                    size: 16
+                  - type: "label"
+                    label: " Decaffeinate"
+      - type: "custom"
+        name: "x3d-mode"
+        bar:
+          - type: "button"
+            class: "custom-menu-btn-not-first"
+            name: "x3d-btn"
+            on_click: "popup:toggle"
+            widgets:
+              - type: "image"
+                src: "kt-speed-limits"
+                size: 18
+        popup:
+          - type: "box"
+            orientation: "vertical"
+            widgets:
+              - type: "button"
+                class: "caffeine-item"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/x3d_mode_cache.sh"
+                widgets:
+                  - type: "image"
+                    src: "kt-speed-limits"
+                    size: 16
+                  - type: "label"
+                    label: " X3D Mode Cache"
+              - type: "button"
+                class: "caffeine-item"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/x3d_mode_freq.sh"
+                widgets:
+                  - type: "image"
+                    src: "kt-speed-limits"
+                    size: 16
+                  - type: "label"
+                    label: " X3D Mode Frequency"
+      - type: "custom"
+        name: "power-menu"
+        bar:
+          - type: "button"
+            name: "power-btn"
+            class: "custom-menu-btn-not-first"
+            on_click: "popup:toggle"
+            widgets:
+              - type: "image"
+                src: "system-log-out"
+                size: 18
+        popup:
+          - type: "box"
+            orientation: "vertical"
+            widgets:
+              - type: "button"
+                class: "suspend-item"
+                on_click: "!ironbar bar top hide-popup && loginctl terminate-session $XDG_SESSION_ID"
+                widgets:
+                  - type: "image"
+                    src: "system-log-out"
+                    size: 16
+                  - type: "label"
+                    label: " Log out"
+              - type: "button"
+                class: "suspend-item"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/loginctl-prompt.nu suspend"
+                widgets:
+                  - type: "image"
+                    src: "system-suspend"
+                    size: 16
+                  - type: "label"
+                    label: " Suspend"
+              - type: "button"
+                class: "suspend-item"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/loginctl-prompt.nu reboot"
+                widgets:
+                  - type: "image"
+                    src: "system-reboot"
+                    size: 16
+                  - type: "label"
+                    label: " Reboot"
+              - type: "button"
+                class: "suspend-item"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/loginctl-prompt.nu poweroff"
+                widgets:
+                  - type: "image"
+                    src: "system-shutdown"
+                    size: 16
+                  - type: "label"
+                    label: " Power Off"
