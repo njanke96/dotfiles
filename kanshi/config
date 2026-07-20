@@ -1,16 +1,38 @@
-profile {
+output DP-1 {
+	alias $main
+	enable
+	position 1080,0
+	mode 3440x1440@143.975006Hz
+	adaptive_sync off
+}
+
+output DP-2 {
+	alias $secondary
+    enable
+	mode 1920x1080@74.986000Hz
+	position 0,0
+	transform 270
+}
+
+profile default {
 	output HDMI-A-2 disable
+	output $secondary
+	output $main
+}
 
-	output DP-2 {
-	    enable
-		mode 1920x1080@74.986000Hz
+profile leftmost-main {
+	output HDMI-A-2 disable
+	
+	output $secondary {
+		position 3440,0
+	}
+
+	output $main {
 		position 0,0
-		transform 270
 	}
+}
 
-	output DP-1 {
-		enable
-		position 1080,0
-		mode 3440x1440@143.975006Hz
-	}
+profile single {
+	output HDMI-A-2 disable
+	output $main
 }
