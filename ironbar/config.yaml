@@ -23,9 +23,6 @@ monitors:
         icon_size: 16
     end:
       - type: "workspaces"
-      - type: "clock"
-        format: "%H:%M:%S"
-        format_popup: "%H:%M:%S"
       - type: "sys_info"
         format:
           - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
@@ -170,3 +167,6 @@ monitors:
                     label: " Power Off"
       - type: notifications
         show_count: true
+      - type: "clock"
+        format: "%H:%M:%S"
+        format_popup: "%H:%M:%S"

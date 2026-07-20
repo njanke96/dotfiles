@@ -110,3 +110,11 @@ button:active,
 .custom-menu-btn-not-first {
   margin-left: calc(-1 * var(--margin-lg));
 }
+
+.notifications.widget {
+  margin-left: calc(-1 * var(--margin-lg));
+}
+
+.clock.widget {
+  margin-left: calc(-1 * var(--margin-lg));
+}
