@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 def main [--codec: string = 'av1' --select-region] {
-  let filename = $"/home/nathan/Videos/Recoding_(date now | format date '%b_%d_%Hh_%Mm_%Ss').mkv"
+  let filename = $"/home/nathan/Videos/Recoding_(date now | format date '%Y-%m-%d--%Hh_%Mm_%Ss').mkv"
 
   let pa_module_loaded: bool = (sh -c `pactl list sinks | grep -q "Name: wl-screenrec-input" && echo "true" || echo "false"`) | into bool
 
