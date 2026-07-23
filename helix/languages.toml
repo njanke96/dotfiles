@@ -45,3 +45,11 @@ name = "css"
 language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = true
+
+[[language]]
+name = "xbps"
+grammar = "bash"
+scope = "source.xbps"
+file-types = [{ glob = "template" }]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
