@@ -12,3 +12,6 @@ pgrep -i saii | xargs kill &>/dev/null
 
 # Sometimes appimages don't fully quit
 pgrep -i AppRun | xargs kill &>/dev/null
+
+# Lights out
+"$HOME"/scripts/pre-suspend.sh

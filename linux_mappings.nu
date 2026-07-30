@@ -69,12 +69,14 @@ export def "get_linux_file_map" [] {
     # mpv
     { repo: $"mpv/mpv.conf", sys: $"($config_home)/mpv/mpv.conf" }
 
+    # pipewire
+    { repo: $"pipewire/pipewire.conf.d/99-loopback.conf", sys: $"($config_home)/pipewire/pipewire.conf.d/99-loopback.conf" }
+    { repo: $"pipewire/pipewire.conf.d/99-wl-screenrec-capture.conf", sys: $"($config_home)/pipewire/pipewire.conf.d/99-wl-screenrec-capture.conf" }
+
     # rofi
     { repo: $"rofi/config.rasi", sys: $"($config_home)/rofi/config.rasi" }
 
     # scripts
-    { repo: "scripts/can-idle.nu", sys: $"($home)/scripts/can-idle.nu" }
-    { repo: "scripts/safe-suspend.sh", sys: $"($home)/scripts/safe-suspend.sh" }
     { repo: "scripts/screenshot.sh", sys: $"($home)/scripts/screenshot.sh" }
     { repo: "scripts/screenrec.nu", sys: $"($home)/scripts/screenrec.nu" }
     { repo: "scripts/conky.sh", sys: $"($home)/scripts/conky.sh" }
