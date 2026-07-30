@@ -26,7 +26,7 @@ monitors:
       - type: "sys_info"
         format:
           - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
-          - "DRAM: {memory_percent}%, {temp_c@spd5118 temp1}°C"
+          - "DRAM: {memory_percent}%"
           - "GPU: {temp_c@amdgpu edge}°C"
         interval: 2
       - type: "tray"
