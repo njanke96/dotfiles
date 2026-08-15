@@ -8,5 +8,12 @@ def main [--codec: string = 'av1' --select-region] {
     _ => ["-g" $"(slurp)"]
   }
 
+  print "Hide this window!\nRecording in 3..."
+  sleep 1sec
+  print "Recording in 2..."
+  sleep 1sec
+  print "Recording in 1..."
+  sleep 1sec
+  
   exec wl-screenrec ...($capture_target) --codec ($codec) --audio --audio-device wl_screenrec_capture.monitor --audio-codec opus --audio-bitrate "40 kB" --filename ($filename)
 }
