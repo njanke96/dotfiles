@@ -33,6 +33,9 @@ swayidle -w timeout 900 'loginctl suspend' before-sleep 'true' &
 # (there is definitely a better solution for this)
 sleep 3
 
+# birdtray
+birdtray &
+
 # blueman applet
 blueman-applet &
 

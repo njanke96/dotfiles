@@ -107,6 +107,9 @@
     <keybind key="W-f">
       <action name="ToggleMaximize" />
     </keybind>
+    <keybind key="W-h">
+      <action name="Iconify" />
+    </keybind>
 
     <!-- Meta + shift + direction snapping -->
     <!-- clear default -->
