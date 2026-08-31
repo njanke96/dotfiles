@@ -1,8 +1,9 @@
 git:
-  pagers:
-    - pager: delta --paging=never --line-numbers
+  diffRenderers:
+    - command: delta --paging=never --line-numbers
       colorArg: always
-    - externalDiffCommand: difft --color=always --display=inline --context=10
+    - command: difft --color=always --display=inline --context=10
+      type: extDiff
 os:
   editPreset: 'helix (hx)'
   openLink: ^open {{link}}
