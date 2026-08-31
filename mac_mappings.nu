@@ -11,6 +11,7 @@ export def "get_mac_file_map" [] {
     # nushell
     { repo: "nushell/config.nu", sys: $"($app_support)/nushell/config.nu" }
     { repo: "nushell/autoload/01-mac.nu", sys: $"($app_support)/nushell/autoload/01-mac.nu" }
+    { repo: "nushell/autoload/80-omp.nu", sys: $"($config_home)/nushell/autoload/80-omp.nu" }
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($app_support)/nushell/autoload/90-carapace.nu" }
     { repo: "nushell/autoload/90-claude.nu", sys: $"($app_support)/nushell/autoload/90-claude.nu" }
     { repo: "nushell/autoload/90-fnm.nu", sys: $"($app_support)/nushell/autoload/90-fnm.nu" }
