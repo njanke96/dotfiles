@@ -47,6 +47,11 @@ formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = true
 
 [[language]]
+name = "scss"
+formatter = { command = "prettier", args = ["--parser", "scss"] }
+auto-format = true
+
+[[language]]
 name = "xbps"
 grammar = "bash"
 scope = "source.xbps"
