@@ -14,7 +14,12 @@ $env.PROMPT_COMMAND = {||
 
     let git_segment = if $branch.exit_code == 0 and ($branch.stdout | str trim | is-not-empty) {
         let branch_name = ($branch.stdout | str trim)
-        $" (ansi purple_bold)\(($branch_name)\)(ansi reset)"
+
+        let status = (do -i { git status --porcelain } | complete)
+        let dirty = ($status.exit_code == 0 and ($status.stdout | str trim | is-not-empty))
+        let dirty_marker = if $dirty { "*" } else { "" }
+
+        $" (ansi purple_bold)\(($branch_name)($dirty_marker)\)(ansi reset)"
     } else {
         ""
     }
