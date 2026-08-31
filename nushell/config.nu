@@ -42,21 +42,3 @@ def --env y [...args] {
 	}
 	rm -fp $tmp
 }
-
-## keybinds
-# This is dumb
-# $env.config.keybindings ++= [{
-#   name: zi_binding
-#   modifier: CONTROL
-#   keycode: Char_z
-#   mode: emacs
-#   event: [
-#     { edit: Clear }
-#     {
-#       edit: InsertString,
-#       value: "zi"
-#     }
-#     { send: Enter }
-#   ]
-# }]
-

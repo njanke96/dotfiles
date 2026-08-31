@@ -13,7 +13,7 @@ export def "get_zephy_file_map" [] {
     # nushell
     { repo: "nushell/config.nu", sys: $"($config_home)/nushell/config.nu" }
     { repo: "nushell/autoload/01-linux-laptop.nu", sys: $"($config_home)/nushell/autoload/01-linux-laptop.nu" }
-    { repo: "nushell/autoload/80-omp.nu", sys: $"($config_home)/nushell/autoload/80-omp.nu" }
+    { repo: "nushell/autoload/10-prompt.nu", sys: $"($config_home)/nushell/autoload/10-prompt.nu" }
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($config_home)/nushell/autoload/90-carapace.nu" }
     # { repo: "nushell/autoload/90-qwen.nu", sys: $"($config_home)/nushell/autoload/90-qwen.nu" }
     # { repo: "nushell/autoload/90-fnm.nu", sys: $"($config_home)/nushell/autoload/90-fnm.nu" }
