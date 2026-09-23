@@ -6,6 +6,7 @@ XKB_DEFAULT_MODEL=pc104
 QT_QPA_PLATFORMTHEME=qt5ct
 
 # cursor theme
+XCURSOR_SIZE=24
 XCURSOR_PATH=/usr/share/icons:/home/nathan/.local/share/icons
 XCURSOR_THEME=Notwaita-Black
 
