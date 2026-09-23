@@ -11,13 +11,13 @@ monitors:
         bar:
           - type: "button"
             name: "app-launcher-button"
-            on_click: '!$HOME/scripts/rofi-appmenu.sh'
+            on_click: "!$HOME/scripts/rofi-appmenu.sh"
             widgets:
               - type: "image"
                 src: "void-logo"
                 size: 18
               - type: "label"
-                label: " Applications" 
+                label: " Applications"
     center:
       - type: "focused"
         icon_size: 16
@@ -98,7 +98,7 @@ monitors:
             widgets:
               - type: "button"
                 class: "caffeine-item"
-                on_click: "!ironbar bar top hide-popup && $HOME/scripts/x3d_mode_cache.sh"
+                on_click: "!ironbar bar top hide-popup && doas x3d-cache"
                 widgets:
                   - type: "image"
                     src: "kt-speed-limits"
@@ -107,13 +107,18 @@ monitors:
                     label: " X3D Mode Cache"
               - type: "button"
                 class: "caffeine-item"
-                on_click: "!ironbar bar top hide-popup && $HOME/scripts/x3d_mode_freq.sh"
+                on_click: "!ironbar bar top hide-popup && doas x3d-freq"
                 widgets:
                   - type: "image"
                     src: "kt-speed-limits"
                     size: 16
                   - type: "label"
                     label: " X3D Mode Frequency"
+      - type: notifications
+        show_count: true
+      - type: "clock"
+        format: "%H:%M:%S"
+        format_popup: "%H:%M:%S"
       - type: "custom"
         name: "power-menu"
         bar:
@@ -165,8 +170,3 @@ monitors:
                     size: 16
                   - type: "label"
                     label: " Power Off"
-      - type: notifications
-        show_count: true
-      - type: "clock"
-        format: "%H:%M:%S"
-        format_popup: "%H:%M:%S"
