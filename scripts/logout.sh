@@ -10,4 +10,4 @@ if ! [ $response -eq 0 ]; then
   exit 0
 fi
 
-swaymsg exit
+loginctl terminate-session "$XDG_SESSION_ID"

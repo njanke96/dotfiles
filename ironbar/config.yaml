@@ -138,7 +138,7 @@ monitors:
             widgets:
               - type: "button"
                 class: "suspend-item"
-                on_click: "!ironbar bar top hide-popup && loginctl terminate-session $XDG_SESSION_ID"
+                on_click: "!ironbar bar top hide-popup && $HOME/scripts/logout.sh"
                 widgets:
                   - type: "image"
                     src: "system-log-out"

@@ -168,7 +168,7 @@ bindsym $alt+Tab exec rofi -show window
 floating_modifier $mod normal
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec ~/scripts/sway-logout.sh
+bindsym $mod+Shift+e exec ~/scripts/logout.sh
 
 ## Moving around:
 #
