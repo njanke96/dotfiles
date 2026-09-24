@@ -1,0 +1,338 @@
+### Variables
+#
+# Logo key.
+set $mod Mod4
+# Alt key
+set $alt Mod1
+# Your preferred terminal emulator
+set $term alacritty
+# Delayed autostart time sec
+set $delayed_start_sec 3
+
+# Gruvbox Dark colors
+set $bg0        #282828
+set $bg0_h      #1d2021
+set $bg1        #3c3836
+set $bg2        #504945
+set $bg3        #665c54
+set $bg4        #7c6f64
+
+set $fg0        #fbf1c7
+set $fg1        #ebdbb2
+set $fg2        #d5c4a1
+set $fg3        #bdae93
+set $fg4        #a89984
+
+set $red        #cc241d
+set $red_b      #fb4934
+set $green      #98971a
+set $green_b    #b8bb26
+set $yellow     #d79921
+set $yellow_b   #fabd2f
+set $blue       #458588
+set $blue_b     #83a598
+set $purple     #b16286
+set $purple_b   #d3869c
+set $aqua       #689d6a
+set $aqua_b     #8ec07c
+set $orange     #d65d0e
+set $orange_b   #fe8019
+set $gray       #928374
+
+### Autostart
+#
+
+# For portals
+exec dbus-update-activation-environment --all
+
+# Immediate start
+exec {
+    kanshi
+    pipewire
+    /usr/libexec/xfce-polkit
+    ironbar
+    swaync
+    nm-applet
+    blueman-applet
+    swayidle -w timeout 900 'loginctl suspend' before-sleep 'true'
+}
+
+# Delayed start (hacky solution)
+exec {
+    sleep $delayed_start_sec && birdtray
+    sleep $delayed_start_sec && flatpak run --branch=stable --arch=x86_64 --command=com.discordapp.Discord --file-forwarding com.discordapp.Discord
+    sleep $delayed_start_sec && ~/scripts/saii.sh
+}
+
+# Even on config reload
+exec_always {
+    ~/scripts/post-suspend.sh
+    kanshictl reload
+}
+
+### Input configuration
+#
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+
+### Workspace configuration
+#
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+
+workspace 5 output DP-2
+workspace 6 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-2
+
+### Appearance
+# 
+
+# gruvbox colors from the openbox theme
+# class                 border    backgr.   text      indicator  child_border
+client.focused           $bg0_h    $bg0_h    $fg0      $orange    $bg0
+client.focused_inactive  $bg0      $bg0      $fg0      $orange    $bg1
+client.unfocused         $bg1      $bg1      $fg4      $bg2       $bg1
+client.urgent            $red      $red      $fg0      $red_b     $red
+client.placeholder       $bg0      $bg0      $fg1      $bg0       $bg0
+
+client.background        $bg0
+
+## Outputs and Background
+# See also kanshi config
+
+output * background ~/Pictures/wallpapers/gruvmoon.png fill
+output DP-1 render_bit_depth 10
+output DP-1 allow_tearing yes
+output DP-1 max_render_time off
+
+# Font
+font pango:Open Sans Regular 10
+
+# Gaps
+gaps inner 8px
+
+# GTK
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Gruvbox-Orange-Dark'
+    gsettings set $gnome-schema icon-theme 'Gruvbox-Plus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Notwaita-Black'
+    gsettings set $gnome-schema font-name 'Open Sans Regular 10'
+    gsettings set $gnome-schema color-scheme 'prefer-dark'
+}
+
+# Note: QT works by qt5ct/qt6ct config files and QT_QPA_PLATFORMTHEME
+
+### Misc conftime
+#
+
+# Start new workspaces in stacking mode
+workspace_layout stacking
+
+# Mouse warps to focused containers
+mouse_warping container
+
+### Key bindings
+#
+
+## Basics:
+#
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Desktop menu
+bindsym $mod+space exec rofi -show drun
+
+# Run menu
+bindsym $mod+r exec rofi -show run
+
+# Window menu
+bindsym $mod+t exec rofi -show window
+# Also alt+tab since sway has nothing like trad alt-tab but the muscle memory might be there
+bindsym $alt+Tab exec rofi -show window
+
+# The key to click and drag stuff
+# Despite the name, also works for non-floating windows.
+floating_modifier $mod normal
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec ~/scripts/sway-logout.sh
+
+## Moving around:
+#
+
+# Move your focus around
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+## Workspaces
+#
+
+# Switch between workspaces
+bindsym Ctrl+$mod+h workspace prev
+bindsym Ctrl+$mod+l workspace next
+bindsym Ctrl+$mod+Left workspace prev
+bindsym Ctrl+$mod+Right workspace next
+
+# Switch to numbered workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move focused container between workspaces
+bindsym $mod+$alt+h move container to workspace prev
+bindsym $mod+$alt+l move container to workspace next
+bindsym $mod+$alt+Left move container to workspace prev
+bindsym $mod+$alt+Right move container to workspace next
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# 
+
+## Layout stuff
+#
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym Ctrl+$mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+## Scratchpad:
+#
+
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+## Resizing containers:
+#
+
+bindsym $mod+n mode "resize"
+
+# It can feel "backwards" depending on the container position
+# Better to live with it than hack around it
+mode "resize" {
+    bindsym h resize shrink width 64px
+    bindsym j resize grow height 64px
+    bindsym k resize shrink height 64px
+    bindsym l resize grow width 64px
+
+    bindsym Left resize shrink width 64px
+    bindsym Down resize grow height 64px
+    bindsym Up resize shrink height 64px
+    bindsym Right resize grow width 64px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+## Utilities:
+#
+
+# Screenshot
+bindsym $mod+Shift+s exec ~/scripts/screenshot.sh
+
+# Screen record
+bindsym $mod+Shift+w exec alacritty -T 'Screen Recording' --class screenrec -e ~/scripts/screenrec.nu --select-region
+bindsym $mod+Shift+alt+w exec alacritty -T 'Screen Recording' --class screenrec -e ~/scripts/screenrec.nu
+
+# Vol Keys
+bindsym --locked XF86AudioMute exec alacritty -T wiremix --class wiremix -e wiremix --tab output
+bindsym --locked $mod+XF86AudioMute exec alacritty -T wiremix --class wiremix -e wiremix --tab playback
+bindsym --locked XF86AudioLowerVolume exec ~/scripts/volume.nu down
+bindsym --locked XF86AudioRaiseVolume exec ~/scripts/volume.nu up
+
+# HDR Toggle (for HDR games, looks terrible with SDR content)
+bindsym $mod+Shift+r output DP-1 hdr toggle
+
+# Tearing for games
+bindsym $mod+Shift+t allow_tearing yes
+bindsym $mod+Shift+$alt+t allow_tearing no
+
+### Specific Window/App behavior
+#
+
+# Forced workspaces
+assign [app_id="Thunderbird"] mail
+
+# Forced floating
+for_window [title="Bolt Launcher"] floating enable
+for_window [title="RuneLite Launcher"] floating enable
+for_window [app_id="net.davidotek.pupgui2"] floating enable
+for_window [app_id="qalculate-gtk"] floating enable
+for_window [app_id="wiremix"] floating enable
+
+include /etc/sway/config.d/*

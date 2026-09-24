@@ -188,7 +188,7 @@
     </keybind>
 
     <!-- Screenshot to clipboard and a temp file -->
-    <keybind key="W-s">
+    <keybind key="W-S-s">
       <action name="Execute" command="/home/nathan/scripts/screenshot.sh">
       </action>
     </keybind>

@@ -63,6 +63,9 @@ export def "get_linux_file_map" [] {
     { repo: $"labwc/menu.xml", sys: $"($config_home)/labwc/menu.xml" }
     { repo: $"labwc/rc.xml", sys: $"($config_home)/labwc/rc.xml" }
 
+    # sway
+    { repo: $"sway/config", sys: $"($config_home)/sway/config" }
+
     # ironbar
     { repo: $"ironbar/config.yaml", sys: $"($config_home)/ironbar/config.yaml" }
     { repo: $"ironbar/style.css", sys: $"($config_home)/ironbar/style.css" }
@@ -93,6 +96,8 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/alacritty_ssh_macbook.sh", sys: $"($home)/scripts/alacritty_ssh_macbook.sh" }
     { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
     { repo: "scripts/rofi-appmenu.sh", sys: $"($home)/scripts/rofi-appmenu.sh" }
+    { repo: "scripts/sway-start.sh", sys: $"($home)/scripts/sway-start.sh" }
+    { repo: "scripts/sway-logout.sh", sys: $"($home)/scripts/sway-logout.sh" }
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }

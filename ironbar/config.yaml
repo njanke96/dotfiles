@@ -1,3 +1,4 @@
+icon_theme: "Gruvbox-Plus-Dark"
 monitors:
   DP-1:
     name: "top"
@@ -23,6 +24,7 @@ monitors:
         icon_size: 16
     end:
       - type: "workspaces"
+        all_monitors: true
       - type: "sys_info"
         format:
           - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
