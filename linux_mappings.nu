@@ -97,6 +97,7 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
     { repo: "scripts/rofi-appmenu.sh", sys: $"($home)/scripts/rofi-appmenu.sh" }
     { repo: "scripts/sway-start.sh", sys: $"($home)/scripts/sway-start.sh" }
+    { repo: "scripts/sway-cheatsheet.sh", sys: $"($home)/scripts/sway-cheatsheet.sh" }
     { repo: "scripts/logout.sh", sys: $"($home)/scripts/logout.sh" }
 
     # topgrade

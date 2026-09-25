@@ -1,3 +1,36 @@
+# Exit: mod+shift+e
+# 
+# Terminal: mod+enter
+# DMenu: mod+space
+# Run: mod+r
+# Close: mod+q
+#
+# dir is hjkl/arrows
+# Move focus around: mod+dir
+# Move a window around: mod+shift+dir
+# Focus ascend (ancestors): mod+a
+# Focus descend (children): mod+d
+# Switch between workspaces: ctrl+mod+<1-9|dir>
+# Send a window to workspace: mod+alt+<1-9>
+#
+# Ungroup and split a window horizontally: mod+b
+# Ungroup and split a window vertically: mod+v
+# Group a window with its parent container: mod+g
+# Split (ungroup) a window for stacking: mod+shift+g
+# Current layout to stacking: mod+s
+# Current layout to tabbed: mod+w
+# Current layout to split (and toggle split direction): mod+e
+# Float toggle: mod+shift+space
+# Float focus toggle: ctrl+mod+space
+# Fullsreen: mod+f
+# Enter resize mode (esc/enter to leave): mod+n
+#
+# Screenshot: mod+shift+s
+# Screenrecord: mod+shift+w
+# Screenrecord entire screen: mod+alt+shift+w
+# 
+# end-cheatsheet
+
 ### Variables
 #
 # Logo key.
@@ -8,6 +41,10 @@ set $alt Mod1
 set $term alacritty
 # Delayed autostart time sec
 set $delayed_start_sec 3
+
+# Displays
+set $main_display DP-1
+set $secondary_display DP-2
 
 # Gruvbox Dark colors
 set $bg0        #282828
@@ -42,7 +79,7 @@ set $gray       #928374
 ### Autostart
 #
 
-# For portals
+# For portals to work
 exec dbus-update-activation-environment --all
 
 # Immediate start
@@ -57,11 +94,11 @@ exec {
     swayidle -w timeout 900 'loginctl suspend' before-sleep 'true'
 }
 
-# Delayed start (hacky solution)
+# Delayed start (hacky solution for apps that require pipewire)
 exec {
     sleep $delayed_start_sec && birdtray
     sleep $delayed_start_sec && flatpak run --branch=stable --arch=x86_64 --command=com.discordapp.Discord --file-forwarding com.discordapp.Discord
-    sleep $delayed_start_sec && ~/scripts/saii.sh
+    sleep $delayed_start_sec && sway-audio-idle-inhibit
 }
 
 # Even on config reload
@@ -79,24 +116,24 @@ input type:pointer {
 
 ### Workspace configuration
 #
-workspace 1 output DP-1
-workspace 2 output DP-1
-workspace 3 output DP-1
-workspace 4 output DP-1
-workspace 5 output DP-1
+workspace 1 output $main_display
+workspace 2 output $main_display
+workspace 3 output $main_display
+workspace 4 output $main_display
+workspace 5 output $main_display
 
-workspace 5 output DP-2
-workspace 6 output DP-2
-workspace 7 output DP-2
-workspace 8 output DP-2
-workspace 9 output DP-2
+workspace 5 output $secondary_display
+workspace 6 output $secondary_display
+workspace 7 output $secondary_display
+workspace 8 output $secondary_display
+workspace 9 output $secondary_display
 
 ### Appearance
 # 
 
 # gruvbox colors from the openbox theme
 # class                 border    backgr.   text      indicator  child_border
-client.focused           $bg0_h    $bg0_h    $fg0      $orange    $bg0
+client.focused           $bg0_h    $bg0_h    $fg0      $orange    $bg0_h
 client.focused_inactive  $bg0      $bg0      $fg0      $orange    $bg1
 client.unfocused         $bg1      $bg1      $fg4      $bg2       $bg1
 client.urgent            $red      $red      $fg0      $red_b     $red
@@ -107,10 +144,10 @@ client.background        $bg0
 ## Outputs and Background
 # See also kanshi config
 
-output * background ~/Pictures/wallpapers/gruvmoon.png fill
-output DP-1 render_bit_depth 10
-output DP-1 allow_tearing yes
-output DP-1 max_render_time off
+output * background ~/Pictures/wallpapers/darkmoon.png fill
+output $main_display render_bit_depth 10
+output $main_display allow_tearing yes
+output $main_display max_render_time off
 
 # Font
 font pango:Open Sans Regular 10
@@ -137,7 +174,10 @@ exec_always {
 # Start new workspaces in stacking mode
 workspace_layout stacking
 
-# Mouse warps to focused containers
+# Pixel borders
+default_border pixel
+
+# Mouse warping
 mouse_warping container
 
 ### Key bindings
@@ -205,34 +245,36 @@ bindsym Ctrl+$mod+Left workspace prev
 bindsym Ctrl+$mod+Right workspace next
 
 # Switch to numbered workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym Ctrl+$mod+1 workspace number 1
+bindsym Ctrl+$mod+2 workspace number 2
+bindsym Ctrl+$mod+3 workspace number 3
+bindsym Ctrl+$mod+4 workspace number 4
+bindsym Ctrl+$mod+5 workspace number 5
+bindsym Ctrl+$mod+6 workspace number 6
+bindsym Ctrl+$mod+7 workspace number 7
+bindsym Ctrl+$mod+8 workspace number 8
+bindsym Ctrl+$mod+9 workspace number 9
+bindsym Ctrl+$mod+0 workspace number 10
+bindsym Ctrl+$mod+m workspace mail
 
 # Move focused container between workspaces
-bindsym $mod+$alt+h move container to workspace prev
-bindsym $mod+$alt+l move container to workspace next
-bindsym $mod+$alt+Left move container to workspace prev
-bindsym $mod+$alt+Right move container to workspace next
+# bindsym $mod+$alt+h move container to workspace prev
+# bindsym $mod+$alt+l move container to workspace next
+# bindsym $mod+$alt+Left move container to workspace prev
+# bindsym $mod+$alt+Right move container to workspace next
 
 # Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+$alt+1 move container to workspace number 1
+bindsym $mod+$alt+2 move container to workspace number 2
+bindsym $mod+$alt+3 move container to workspace number 3
+bindsym $mod+$alt+4 move container to workspace number 4
+bindsym $mod+$alt+5 move container to workspace number 5
+bindsym $mod+$alt+6 move container to workspace number 6
+bindsym $mod+$alt+7 move container to workspace number 7
+bindsym $mod+$alt+8 move container to workspace number 8
+bindsym $mod+$alt+9 move container to workspace number 9
+bindsym $mod+$alt+0 move container to workspace number 10
+bindsym $mod+$alt+m move container to workspace mail
 
 # 
 
@@ -244,6 +286,13 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # respectively.
 bindsym $mod+b splith
 bindsym $mod+v splitv
+
+# Join a layout with its parent (group it)
+bindsym $mod+g split none
+
+# Split a layout from its parent (ungroup it) initially in stacking layout
+# There is no single command to do this it seems
+bindsym $mod+Shift+g splitv; layout stacking
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -302,6 +351,9 @@ mode "resize" {
 ## Utilities:
 #
 
+# Help
+bindsym $mod+f1 exec alacritty -T 'Help' --class sway-help -e ~/scripts/sway-cheatsheet.sh
+
 # Screenshot
 bindsym $mod+Shift+s exec ~/scripts/screenshot.sh
 
@@ -316,7 +368,7 @@ bindsym --locked XF86AudioLowerVolume exec ~/scripts/volume.nu down
 bindsym --locked XF86AudioRaiseVolume exec ~/scripts/volume.nu up
 
 # HDR Toggle (for HDR games, looks terrible with SDR content)
-bindsym $mod+Shift+r output DP-1 hdr toggle
+bindsym $mod+Shift+r output $main_display hdr toggle
 
 # Tearing for games
 bindsym $mod+Shift+t allow_tearing yes
@@ -331,8 +383,10 @@ assign [app_id="Thunderbird"] mail
 # Forced floating
 for_window [title="Bolt Launcher"] floating enable
 for_window [title="RuneLite Launcher"] floating enable
+for_window [app_id="sway-help"] floating enable
 for_window [app_id="net.davidotek.pupgui2"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [app_id="wiremix"] floating enable
+for_window [app_id="screenrec"] floating enable
 
 include /etc/sway/config.d/*
