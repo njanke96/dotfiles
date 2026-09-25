@@ -1,5 +1,23 @@
 icon_theme: "Gruvbox-Plus-Dark"
 monitors:
+  DP-2:
+    name: "secondary_top"
+    position: "top"
+    height: 24
+    anchor_to_edges: true
+    layer: "top"
+    start:
+      - type: "workspaces"
+        all_monitors: true
+    end:
+      - type: "sys_info"
+        format:
+          - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
+          - "DRAM: {memory_percent}%"
+          - "GPU: {temp_c@amdgpu edge}°C"
+        class: "right-margin"
+        interval: 2
+
   DP-1:
     name: "top"
     position: "top"
