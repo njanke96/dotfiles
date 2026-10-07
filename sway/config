@@ -403,5 +403,8 @@ for_window [app_id="net.davidotek.pupgui2"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [app_id="wiremix"] floating enable
 for_window [app_id="screenrec"] floating enable
+for_window [app_id="Thunderbird" title="\d+Reminder[s]?"] floating enable
+for_window [app_id="Thunderbird" title="An error has occurred"] floating enable
+for_window [class="steam"] floating enable
 
 include /etc/sway/config.d/*
