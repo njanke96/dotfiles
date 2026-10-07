@@ -1,6 +1,7 @@
 export def "get_mac_file_map" [] {
-  let config_home = $"($env.HOME)/.config"
-  let app_support = $"($env.HOME)/Library/Application Support"
+  let home = $env.HOME;
+  let config_home = $"($home)/.config"
+  let app_support = $"($home)/Library/Application Support"
 
   return [
     # helix
@@ -15,6 +16,7 @@ export def "get_mac_file_map" [] {
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($app_support)/nushell/autoload/90-carapace.nu" }
     { repo: "nushell/autoload/90-claude.nu", sys: $"($app_support)/nushell/autoload/90-claude.nu" }
     { repo: "nushell/autoload/90-fnm.nu", sys: $"($app_support)/nushell/autoload/90-fnm.nu" }
+    { repo: "nushell/autoload/90-zmx.nu", sys: $"($config_home)/nushell/autoload/90-zmx.nu" }
 
     # lazygit
     { repo: "lazygit_mac/config.yml", sys: $"($app_support)/lazygit/config.yml"}
@@ -28,5 +30,8 @@ export def "get_mac_file_map" [] {
 
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
+
+    # zsh
+    { repo: "zsh/.zshrc", sys: $"($home)/.zshrc" }
   ]
 }
