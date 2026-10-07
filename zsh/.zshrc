@@ -1,16 +1,22 @@
 autoload -U compinit && compinit
 
-# Carapace if available
+# Carapace
 if command -v carapace &>/dev/null; then
   export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
   zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
   source <(carapace _carapace)
 fi
 
-# 
+# zsh-autosuggestions
 if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# zsh-autosuggestions (mac)
+if [[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Color ls output
@@ -89,3 +95,17 @@ if [[ -n $ZMX_SESSION ]]; then
   export PROMPT="[$ZMX_SESSION] ${PROMPT}"
 fi
 
+# FNM
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+# zoxide
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+  bindkey -s '^U' '^A^Kzi\n'
+fi
+
+if [[ -f "$HOME/.zshrc_old" ]]; then
+  source "$HOME/.zshrc_old"
+fi
