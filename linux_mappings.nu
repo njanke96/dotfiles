@@ -35,6 +35,9 @@ export def "get_linux_file_map" [] {
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
 
+    # zsh
+    { repo: "zsh/.zshrc", sys: $"($home)/.zshrc" }
+
     ## Linux specfic
     #
   
