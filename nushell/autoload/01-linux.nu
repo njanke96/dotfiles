@@ -1,3 +1,7 @@
+# set $SHELL once in nushell
+$env.SHELL = "/usr/bin/nu"
+
+# path additions
 $env.path = $env.path | append [
   $"($env.home)/.cargo/bin"
   $"($env.home)/.local/bin"

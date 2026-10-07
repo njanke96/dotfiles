@@ -38,7 +38,13 @@ $env.PROMPT_COMMAND = {||
         ""
     }
 
-    $"($path_segment)($git_segment)($exit_segment)"
+    let zmx_segment = match (do -i { $env.ZMX_SESSION }) {
+        null => ""
+        "" => ""
+        $zmx_session => $"[($zmx_session)] "
+    }
+
+    $"(ansi white)($zmx_segment)(ansi reset)($path_segment)($git_segment)($exit_segment)"
 }
 
 $env.PROMPT_COMMAND_RIGHT = { || $"(whoami)@(uname | get nodename)" }

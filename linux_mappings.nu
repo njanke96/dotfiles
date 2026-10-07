@@ -17,6 +17,7 @@ export def "get_linux_file_map" [] {
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($config_home)/nushell/autoload/90-carapace.nu" }
     { repo: "nushell/autoload/90-qwen.nu", sys: $"($config_home)/nushell/autoload/90-qwen.nu" }
     { repo: "nushell/autoload/90-fnm.nu", sys: $"($config_home)/nushell/autoload/90-fnm.nu" }
+    { repo: "nushell/autoload/90-zmx.nu", sys: $"($config_home)/nushell/autoload/90-zmx.nu" }
 
     # lazygit
     { repo: "lazygit/config.yml", sys: $"($config_home)/lazygit/config.yml"}
