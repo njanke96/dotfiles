@@ -142,8 +142,8 @@ workspace $workspace_game output $main_display
 
 # gruvbox colors from the openbox theme
 # class                 border    backgr.   text      indicator  child_border
-client.focused           $bg0_h    $bg0_h    $fg0      $orange    $bg0_h
-client.focused_inactive  $bg0      $bg0      $fg0      $orange    $bg1
+client.focused           $bg0_h    $fg2    $bg0_h      $orange    $fg2
+client.focused_inactive  $bg0      $bg0      $fg0      $bg4       $bg1
 client.unfocused         $bg1      $bg1      $fg4      $bg2       $bg1
 client.urgent            $red      $red      $fg0      $red_b     $red
 client.placeholder       $bg0      $bg0      $fg1      $bg0       $bg0
@@ -164,15 +164,18 @@ font pango:Open Sans Regular 10
 # Gaps
 gaps inner 8px
 
+# Mouse warping
+mouse_warping output
+
 # GTK
-set $gnome-schema org.gnome.desktop.interface
+set $gnome_schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Gruvbox-Orange-Dark'
-    gsettings set $gnome-schema icon-theme 'Gruvbox-Plus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Notwaita-Black'
-    gsettings set $gnome-schema font-name 'Open Sans Regular 10'
-    gsettings set $gnome-schema color-scheme 'prefer-dark'
+    gsettings set $gnome_schema gtk-theme 'Gruvbox-Orange-Dark'
+    gsettings set $gnome_schema icon-theme 'Gruvbox-Plus-Dark'
+    gsettings set $gnome_schema cursor-theme 'Notwaita-Black'
+    gsettings set $gnome_schema font-name 'Open Sans Regular 10'
+    gsettings set $gnome_schema color-scheme 'prefer-dark'
 }
 
 # Note: QT works by qt5ct/qt6ct config files and QT_QPA_PLATFORMTHEME
@@ -183,11 +186,9 @@ exec_always {
 # Start new workspaces in stacking mode
 workspace_layout stacking
 
-# Pixel borders
-default_border pixel
-
-# Mouse warping
-mouse_warping container
+# Borders
+default_border pixel 2
+titlebar_border_thickness 0
 
 ### Key bindings
 #
@@ -406,5 +407,6 @@ for_window [app_id="screenrec"] floating enable
 for_window [app_id="Thunderbird" title="\d+Reminder[s]?"] floating enable
 for_window [app_id="Thunderbird" title="An error has occurred"] floating enable
 for_window [class="steam"] floating enable
+for_window [class="Luxtorpeda"] floating enable
 
 include /etc/sway/config.d/*
