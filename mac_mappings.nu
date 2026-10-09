@@ -16,7 +16,10 @@ export def "get_mac_file_map" [] {
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($app_support)/nushell/autoload/90-carapace.nu" }
     { repo: "nushell/autoload/90-claude.nu", sys: $"($app_support)/nushell/autoload/90-claude.nu" }
     { repo: "nushell/autoload/90-fnm.nu", sys: $"($app_support)/nushell/autoload/90-fnm.nu" }
+    { repo: "nushell/autoload/90-zoxide.nu", sys: $"($config_home)/nushell/autoload/90-zoxide.nu" }
     { repo: "nushell/autoload/90-zmx.nu", sys: $"($config_home)/nushell/autoload/90-zmx.nu" }
+    { repo: "nushell/autoload/90-zmx-select.nu", sys: $"($config_home)/nushell/autoload/90-zmx-select.nu" }
+    { repo: "nushell/autoload/99-keybinds.nu", sys: $"($config_home)/nushell/autoload/99-keybinds.nu" }
 
     # lazygit
     { repo: "lazygit_mac/config.yml", sys: $"($app_support)/lazygit/config.yml"}

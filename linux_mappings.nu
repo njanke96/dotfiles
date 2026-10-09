@@ -17,7 +17,10 @@ export def "get_linux_file_map" [] {
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($config_home)/nushell/autoload/90-carapace.nu" }
     { repo: "nushell/autoload/90-qwen.nu", sys: $"($config_home)/nushell/autoload/90-qwen.nu" }
     { repo: "nushell/autoload/90-fnm.nu", sys: $"($config_home)/nushell/autoload/90-fnm.nu" }
+    { repo: "nushell/autoload/90-zoxide.nu", sys: $"($config_home)/nushell/autoload/90-zoxide.nu" }
     { repo: "nushell/autoload/90-zmx.nu", sys: $"($config_home)/nushell/autoload/90-zmx.nu" }
+    { repo: "nushell/autoload/90-zmx-select.nu", sys: $"($config_home)/nushell/autoload/90-zmx-select.nu" }
+    { repo: "nushell/autoload/99-keybinds.nu", sys: $"($config_home)/nushell/autoload/99-keybinds.nu" }
 
     # lazygit
     { repo: "lazygit/config.yml", sys: $"($config_home)/lazygit/config.yml"}
@@ -102,6 +105,7 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/rofi-appmenu.sh", sys: $"($home)/scripts/rofi-appmenu.sh" }
     { repo: "scripts/sway-start.sh", sys: $"($home)/scripts/sway-start.sh" }
     { repo: "scripts/sway-cheatsheet.sh", sys: $"($home)/scripts/sway-cheatsheet.sh" }
+    { repo: "scripts/sway-rename.sh", sys: $"($home)/scripts/sway-rename.sh" }
     { repo: "scripts/logout.sh", sys: $"($home)/scripts/logout.sh" }
 
     # topgrade
