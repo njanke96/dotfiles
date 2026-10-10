@@ -1,7 +1,7 @@
 # Exit: mod+shift+e
 # 
 # Terminal: mod+enter
-# DMenu: mod+space
+# Drun (Desktop file run): mod+space
 # Run: mod+r
 # Close: mod+q
 #
@@ -10,6 +10,7 @@
 # Move a window around: mod+shift+dir
 # Focus ascend (ancestors): mod+a
 # Focus descend (children): mod+d
+# Rename title of selected container: mod+i
 # Switch between workspaces: mod+<1-9>
 # Switch to next workspace: ctrl+mod+right
 # Switch to next prev: ctrl+mod+left
@@ -324,9 +325,12 @@ bindsym $mod+Shift+space floating toggle
 # Swap focus between the tiling area and the floating area
 bindsym Ctrl+$mod+space focus mode_toggle
 
-# Move focus to the parent container
+# Extend/retract focus to the parent/child container
 bindsym $mod+a focus parent
 bindsym $mod+d focus child
+
+# Rename selected container title (works with parent selected)
+bindsym $mod+i exec ~/scripts/sway-rename.sh
 
 ## Scratchpad:
 #

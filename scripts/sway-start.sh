@@ -27,4 +27,7 @@ export SDL_VIDEO_DRIVER=wayland
 # For HDR - disable if this causes issues
 export WLR_RENDERER=vulkan
 
+# Usually fixes java apps (Runelite, JetBrains)
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 dbus-run-session sway
