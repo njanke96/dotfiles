@@ -52,6 +52,7 @@ set $secondary_display DP-2
 # Special workspaces
 set $workspace_mail 99:mail
 set $workspace_game 11:game
+set $workspace_bg 12:bg
 
 # Gruvbox Dark colors
 set $bg0        #282828
@@ -137,18 +138,18 @@ workspace 10 output $secondary_display
 
 workspace $workspace_mail output $main_display
 workspace $workspace_game output $main_display
+workspace $workspace_bg output $main_display
 
 ### Appearance
 # 
 
 # gruvbox colors from the openbox theme
 # class                 border    backgr.   text      indicator  child_border
-client.focused           $bg0_h    $fg2    $bg0_h      $orange    $fg2
+client.focused           $fg2      $fg2      $bg0_h    $orange    $fg2
 client.focused_inactive  $bg0      $bg0      $fg0      $bg4       $bg1
-client.unfocused         $bg1      $bg1      $fg4      $bg2       $bg1
+client.unfocused         $bg0      $bg1      $fg4      $bg2       $bg1
 client.urgent            $red      $red      $fg0      $red_b     $red
 client.placeholder       $bg0      $bg0      $fg1      $bg0       $bg0
-
 client.background        $bg0
 
 ## Outputs and Background
@@ -189,7 +190,7 @@ workspace_layout stacking
 
 # Borders
 default_border pixel 2
-titlebar_border_thickness 0
+titlebar_border_thickness 1
 
 ### Key bindings
 #
@@ -217,6 +218,9 @@ bindsym $alt+Tab exec rofi -show window
 # The key to click and drag stuff
 # Despite the name, also works for non-floating windows.
 floating_modifier $mod normal
+
+# Power
+bindsym $mod+Shift+z exec ~/scripts/loginctl-prompt.nu suspend
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec ~/scripts/logout.sh
@@ -270,6 +274,7 @@ bindsym $mod+0 workspace number 10
 # Switch to special workspace
 bindsym $mod+m workspace $workspace_mail
 bindsym $mod+p workspace $workspace_game
+bindsym $mod+bracketleft workspace $workspace_bg
 
 # Move focused container between workspaces
 # bindsym $mod+$alt+h move container to workspace prev
@@ -278,20 +283,21 @@ bindsym $mod+p workspace $workspace_game
 # bindsym $mod+$alt+Right move container to workspace next
 
 # Move focused container to workspace
-bindsym $mod+$alt+1 move container to workspace number 1
-bindsym $mod+$alt+2 move container to workspace number 2
-bindsym $mod+$alt+3 move container to workspace number 3
-bindsym $mod+$alt+4 move container to workspace number 4
-bindsym $mod+$alt+5 move container to workspace number 5
-bindsym $mod+$alt+6 move container to workspace number 6
-bindsym $mod+$alt+7 move container to workspace number 7
-bindsym $mod+$alt+8 move container to workspace number 8
-bindsym $mod+$alt+9 move container to workspace number 9
-bindsym $mod+$alt+0 move container to workspace number 10
+bindsym $mod+$alt+1 move container to workspace number 1, workspace number 1 
+bindsym $mod+$alt+2 move container to workspace number 2, workspace number 2 
+bindsym $mod+$alt+3 move container to workspace number 3, workspace number 3 
+bindsym $mod+$alt+4 move container to workspace number 4, workspace number 4 
+bindsym $mod+$alt+5 move container to workspace number 5, workspace number 5 
+bindsym $mod+$alt+6 move container to workspace number 6, workspace number 6 
+bindsym $mod+$alt+7 move container to workspace number 7, workspace number 7 
+bindsym $mod+$alt+8 move container to workspace number 8, workspace number 8 
+bindsym $mod+$alt+9 move container to workspace number 9, workspace number 9 
+bindsym $mod+$alt+0 move container to workspace number 10, workspace number 10 
 
 # Move focused container to special workspace
-bindsym $mod+$alt+m move container to workspace $workspace_mail
-bindsym $mod+$alt+p move container to workspace $workspace_game
+bindsym $mod+$alt+m move container to workspace $workspace_mail, workspace $workspace_mail
+bindsym $mod+$alt+p move container to workspace $workspace_game, workspace $workspace_game
+bindsym $mod+$alt+bracketleft move container to workspace $workspace_bg, workspace $workspace_bg
 
 # 
 
@@ -412,5 +418,6 @@ for_window [app_id="Thunderbird" title="\d+Reminder[s]?"] floating enable
 for_window [app_id="Thunderbird" title="An error has occurred"] floating enable
 for_window [class="steam"] floating enable
 for_window [class="Luxtorpeda"] floating enable
+for_window [class="XEyes"] floating enable
 
 include /etc/sway/config.d/*
