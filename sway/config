@@ -186,7 +186,7 @@ exec_always {
 #
 
 # Start new workspaces in stacking mode
-workspace_layout stacking
+workspace_layout tabbed
 
 # Borders
 default_border pixel 2
@@ -315,7 +315,7 @@ bindsym $mod+g split none
 
 # Split a layout from its parent (ungroup it) initially in stacking layout
 # There is no single command to do this it seems
-bindsym $mod+Shift+g splitv; layout stacking
+bindsym $mod+Shift+g splitv; layout tabbed
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
