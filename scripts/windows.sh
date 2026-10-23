@@ -2,7 +2,7 @@
 #
 
 # ask for confirmation
-zenity --question --title="Reboot to Windows?" --text="Are you sure you want to leave Glorious Void?"
+"$HOME/scripts/rofi-yn.sh" "Reboot to Windows?"
 
 response=$?
 

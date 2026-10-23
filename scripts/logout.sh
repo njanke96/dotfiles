@@ -2,7 +2,7 @@
 #
 
 # ask for confirmation
-zenity --question --title="Log out?" --text="Are you sure you want to log out?"
+"$HOME/scripts/rofi-yn.sh" "Log out?"
 
 response=$?
 

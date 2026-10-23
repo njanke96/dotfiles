@@ -66,6 +66,12 @@ export def "get_zephy_file_map" [] {
     { repo: "scripts/saii.sh", sys: $"($home)/scripts/saii.sh" }
     { repo: "scripts/volume.nu", sys: $"($home)/scripts/volume.nu" }
     { repo: "scripts/loginctl-prompt.nu", sys: $"($home)/scripts/loginctl-prompt.nu" }
+    { repo: "scripts/rofi-appmenu.sh", sys: $"($home)/scripts/rofi-appmenu.sh" }
+    { repo: "scripts/rofi-yn.sh", sys: $"($home)/scripts/rofi-yn.sh" }
+    { repo: "scripts/sway-start.sh", sys: $"($home)/scripts/sway-start.sh" }
+    { repo: "scripts/sway-cheatsheet.sh", sys: $"($home)/scripts/sway-cheatsheet.sh" }
+    { repo: "scripts/sway-rename.sh", sys: $"($home)/scripts/sway-rename.sh" }
+    { repo: "scripts/logout.sh", sys: $"($home)/scripts/logout.sh" }
   ]
   
   return $file_map
