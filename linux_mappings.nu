@@ -72,6 +72,7 @@ export def "get_linux_file_map" [] {
 
     # sway
     { repo: $"sway/config", sys: $"($config_home)/sway/config" }
+    { repo: $"sway/config.d/voidstation.config", sys: $"($config_home)/sway/config.d/voidstation.config" }
 
     # ironbar
     { repo: $"ironbar/config.yaml", sys: $"($config_home)/ironbar/config.yaml" }
