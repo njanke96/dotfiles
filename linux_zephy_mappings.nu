@@ -17,6 +17,10 @@ export def "get_zephy_file_map" [] {
     { repo: "nushell/autoload/90-carapace.nu", sys: $"($config_home)/nushell/autoload/90-carapace.nu" }
     # { repo: "nushell/autoload/90-qwen.nu", sys: $"($config_home)/nushell/autoload/90-qwen.nu" }
     # { repo: "nushell/autoload/90-fnm.nu", sys: $"($config_home)/nushell/autoload/90-fnm.nu" }
+    { repo: "nushell/autoload/90-zoxide.nu", sys: $"($config_home)/nushell/autoload/90-zoxide.nu" }
+    { repo: "nushell/autoload/90-zmx.nu", sys: $"($config_home)/nushell/autoload/90-zmx.nu" }
+    { repo: "nushell/autoload/90-zmx-select.nu", sys: $"($config_home)/nushell/autoload/90-zmx-select.nu" }
+    { repo: "nushell/autoload/99-keybinds.nu", sys: $"($config_home)/nushell/autoload/99-keybinds.nu" }
 
     # lazygit
     { repo: "lazygit/config.yml", sys: $"($config_home)/lazygit/config.yml"}
@@ -33,6 +37,9 @@ export def "get_zephy_file_map" [] {
 
     # zellij
     { repo: "zellij/config.kdl", sys: $"($config_home)/zellij/config.kdl"}
+
+    # zsh
+    { repo: "zsh/.zshrc", sys: $"($home)/.zshrc" }
 
     ## Linux specfic
     #
