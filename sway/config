@@ -96,7 +96,6 @@ exec {
   kanshi
   pipewire
   /usr/libexec/xfce-polkit
-  ironbar
   swaync
   nm-applet
   blueman-applet
@@ -106,6 +105,7 @@ exec {
 # Delayed start (hacky solution for apps that require pipewire)
 exec {
   sleep $delayed_start_sec && sway-audio-idle-inhibit
+  sleep $delayed_start_sec && ironbar
 }
 
 # Even on config reload
