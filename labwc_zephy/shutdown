@@ -8,3 +8,4 @@ pgrep -f xfce-polkit | xargs kill &>/dev/null
 pgrep -f nm-applet | xargs kill &>/dev/null
 pgrep -f blueman-applet | xargs kill &>/dev/null
 pgrep -f ironbar | xargs kill &>/dev/null
+pgrep -f swaync | xargs kill &>/dev/null

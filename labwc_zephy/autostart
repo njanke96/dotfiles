@@ -12,15 +12,17 @@ pipewire &
 # XFCE polkit
 /usr/libexec/xfce-polkit &
 
-# ironbar
-ironbar &
+# swaync
+swaync &
 
 # nm-applet
 nm-applet &
 
-# sleep before starting applications (mostly for pipewire to finish starting)
 # (there is definitely a better solution for this)
-sleep 5
+sleep 3
+
+# ironbar
+ironbar &
 
 # blueman applet
 blueman-applet &
