@@ -9,15 +9,15 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # cursor theme
 export XCURSOR_SIZE=24
-export XCURSOR_PATH=/usr/share/icons:/home/nathan/.local/share/icons
+export XCURSOR_PATH=/usr/share/icons:$HOME/.local/share/icons
 export XCURSOR_THEME=Notwaita-Black
 
 # XDG env
-export XDG_CACHE_HOME=/home/nathan/.cache
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_DIRS=/etc/xdg
-export XDG_CONFIG_HOME=/home/nathan/.config
-export XDG_DATA_HOME=/home/nathan/.local/share
-export XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share:/home/nathan/.local/share/flatpak/exports/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share:$HOME/.local/share/flatpak/exports/share
 
 # Only for steam within sway (desktop or gamescope-bigpicture)
 export PROTON_ENABLE_WAYLAND=1

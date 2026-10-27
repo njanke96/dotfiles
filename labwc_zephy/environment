@@ -6,6 +6,7 @@ XKB_DEFAULT_MODEL=pc104
 QT_QPA_PLATFORMTHEME=qt5ct
 
 # cursor theme
+XCURSOR_SIZE=24
 XCURSOR_PATH=/usr/share/icons:/home/nathan/.local/share/icons
 XCURSOR_THEME=Notwaita-Black
 
@@ -15,3 +16,8 @@ XDG_CONFIG_DIRS=/etc/xdg
 XDG_CONFIG_HOME=/home/nathan/.config
 XDG_DATA_HOME=/home/nathan/.local/share
 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:/home/nathan/.local/share:/home/nathan/.local/share/flatpak/exports/share
+
+# Steam within labwc
+PROTON_ENABLE_WAYLAND=1
+SDL_VIDEODRIVER=wayland
+SDL_VIDEO_DRIVER=wayland

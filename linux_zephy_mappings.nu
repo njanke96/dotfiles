@@ -10,6 +10,14 @@ export def "get_zephy_file_map" [] {
     { repo: "helix/languages.toml", sys: $"($config_home)/helix/languages.toml" }
     { repo: "helix/themes/gruvbox_dark_hard_transparent.toml", sys: $"($config_home)/helix/themes/gruvbox_dark_hard_transparent.toml" }
 
+    # sway
+    { repo: $"sway/config", sys: $"($config_home)/sway/config" }
+    { repo: $"sway/config.d/zephy.config", sys: $"($config_home)/sway/config.d/zephy.config" }
+
+    # ironbar
+    { repo: $"ironbar_zephy/config.yaml", sys: $"($config_home)/ironbar/config.yaml" }
+    { repo: $"ironbar_zephy/style.css", sys: $"($config_home)/ironbar/style.css" }
+
     # nushell
     { repo: "nushell/config.nu", sys: $"($config_home)/nushell/config.nu" }
     { repo: "nushell/autoload/01-linux-laptop.nu", sys: $"($config_home)/nushell/autoload/01-linux-laptop.nu" }
