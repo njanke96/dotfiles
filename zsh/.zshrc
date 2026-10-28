@@ -44,6 +44,10 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search     # Up arrow
 bindkey "^[[B" down-line-or-beginning-search   # Down arrow
 
+# Control left and right
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # Load color module
 autoload -U colors && colors
 
