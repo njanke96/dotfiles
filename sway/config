@@ -43,8 +43,6 @@ set $mod Mod4
 set $alt Mod1
 # Your preferred terminal emulator
 set $term alacritty
-# Delayed autostart time sec
-set $delayed_start_sec 3
 
 # Special workspaces
 set $workspace_mail 99:mail
@@ -94,7 +92,6 @@ exec dbus-update-activation-environment --all
 # Immediate start
 exec {
   kanshi
-  pipewire
   /usr/libexec/xfce-polkit
   swaync
   nm-applet
@@ -102,10 +99,10 @@ exec {
   swayidle -w timeout 900 'loginctl suspend' before-sleep 'true'
 }
 
-# Delayed start (hacky solution for apps that require pipewire)
+# Wait for pipewire
 exec {
-  sleep $delayed_start_sec && sway-audio-idle-inhibit
-  sleep $delayed_start_sec && ironbar
+  ~/scripts/wait-for-pipewire.sh && sway-audio-idle-inhibit
+  ~/scripts/wait-for-pipewire.sh && ironbar
 }
 
 # Even on config reload

@@ -6,9 +6,6 @@ kanshi &
 # Background wallpapers
 swaybg -o '*' -m fill -i /home/nathan/Pictures/wallpapers/gruvmoon.png &
 
-# Pipewire
-pipewire &
-
 # XFCE polkit
 /usr/libexec/xfce-polkit &
 
@@ -18,8 +15,9 @@ swaync &
 # nm-applet
 nm-applet &
 
-# (there is definitely a better solution for this)
-sleep 3
+# wait for pipewire
+~/scripts/wait-for-pipewire.sh
+sleep 1
 
 # ironbar
 ironbar &

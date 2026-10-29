@@ -3,7 +3,6 @@
 # Shutdown daemons
 pgrep -f kanshi | xargs kill &>/dev/null
 pgrep -f swaybg | xargs kill &>/dev/null
-pgrep -f pipewire | xargs kill &>/dev/null
 pgrep -f xfce-polkit | xargs kill &>/dev/null
 pgrep -f nm-applet | xargs kill &>/dev/null
 pgrep -f blueman-applet | xargs kill &>/dev/null

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Wait for the dbus session service to be up
+SVDIR="$HOME/.config/service" sv check dbus >/dev/null || exit 1
+
+if [ -d "$TURNSTILE_ENV_DIR" ]; then
+	exec chpst -e "$TURNSTILE_ENV_DIR" pipewire
+fi
+
+exec pipewire

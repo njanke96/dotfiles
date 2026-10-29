@@ -7,9 +7,6 @@ kanshi &
 swaybg -o DP-1 -i "$HOME/Pictures/wallpapers/gruvmoon.png" &
 swaybg -o DP-2 -i "$HOME/Pictures/wallpapers/gruvmoon.png" -m fill &
 
-# Pipewire
-pipewire &
-
 # XFCE polkit
 /usr/libexec/xfce-polkit &
 
@@ -29,12 +26,9 @@ swayidle -w timeout 900 'loginctl suspend' before-sleep 'true' &
 # to run on resume it must also be called as 'nathan' via /etc/elogind/system-sleep/post-sleep.sh (if [ "$1" = "post" ], see loginctl(1))
 "$HOME/scripts/post-suspend.sh"
 
-# sleep before starting applications (mostly for pipewire to finish starting)
-# (there is definitely a better solution for this)
-sleep 3
-
-# birdtray
-birdtray &
+# wait for pipewire + 1 second
+"$HOME/scripts/wait-for-pipewire.sh"
+sleep 1
 
 # blueman applet
 blueman-applet &
@@ -48,3 +42,7 @@ blueman-applet &
 # points to a script that just runs sway-audio-idle-inhibit in a loop in case
 # it crashes
 "$HOME/scripts/saii.sh" &
+
+# birdtray needs a few seconds after pipewire
+sleep 3
+birdtray &

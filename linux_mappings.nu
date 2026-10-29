@@ -108,7 +108,15 @@ export def "get_linux_file_map" [] {
     { repo: "scripts/sway-start.sh", sys: $"($home)/scripts/sway-start.sh" }
     { repo: "scripts/sway-cheatsheet.sh", sys: $"($home)/scripts/sway-cheatsheet.sh" }
     { repo: "scripts/sway-rename.sh", sys: $"($home)/scripts/sway-rename.sh" }
+    { repo: "scripts/update-runsvdir-env.sh", sys: $"($home)/scripts/update-runsvdir-env.sh" }
     { repo: "scripts/logout.sh", sys: $"($home)/scripts/logout.sh" }
+    { repo: "scripts/wait-for-pipewire.sh", sys: $"($home)/scripts/wait-for-pipewire.sh" }
+
+    # turnstile user services
+    { repo: "turnstile/service/dbus/check", sys: $"($config_home)/service/dbus/check" }
+    { repo: "turnstile/service/dbus/run", sys: $"($config_home)/service/dbus/run" }
+    { repo: "turnstile/service/pipewire/run", sys: $"($config_home)/service/pipewire/run" }
+    { repo: "turnstile/service/turnstile-ready/conf", sys: $"($config_home)/service/turnstile-ready/conf" }
 
     # topgrade
     { repo: "topgrade/topgrade.toml", sys: $"($config_home)/topgrade.toml" }
