@@ -22,6 +22,11 @@ $env.path = $env.path | append [
   "/opt/homebrew/sbin"
 ]
 
+## Add local bin
+$env.path = $env.path | append [
+  "/usr/local/bin"
+]
+
 ## --- Google Cloud SDK Setup ---
 
 # Define the base directory (this is the value of ${0:A:h} in the Zsh context)

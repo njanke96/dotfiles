@@ -4,6 +4,10 @@ export def "get_mac_file_map" [] {
   let app_support = $"($home)/Library/Application Support"
 
   return [
+    # alacritty
+    { repo: $"alacritty_mac/alacritty.toml", sys: $"($config_home)/alacritty/alacritty.toml" }
+    { repo: $"alacritty/custom_themes/gruvbox-dark.toml", sys: $"($config_home)/alacritty/custom_themes/gruvbox-dark.toml" }
+
     # helix
     { repo: "helix/config.toml", sys: $"($config_home)/helix/config.toml" }
     { repo: "helix/languages.toml", sys: $"($config_home)/helix/languages.toml" }
