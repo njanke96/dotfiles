@@ -1,0 +1,42 @@
+# swaylock config - Gruvbox Dark
+
+# Background
+image=~/Pictures/wallpapers/forest.jpg
+color=282828
+
+# Inside (idle / verifying / wrong / clear / caps-lock)
+inside-color=282828
+inside-ver-color=282828
+inside-wrong-color=282828
+inside-clear-color=282828
+inside-caps-lock-color=282828
+
+# Ring
+ring-color=665c54
+ring-ver-color=83a598
+ring-wrong-color=fb4934
+ring-clear-color=fabd2f
+ring-caps-lock-color=fe8019
+
+# Key highlight and backspace highlight
+key-hl-color=b8bb26
+bs-hl-color=fb4934
+caps-lock-key-hl-color=fe8019
+caps-lock-bs-hl-color=fb4934
+
+# Separator between ring segments
+separator-color=3c3836
+
+# Text
+text-color=ebdbb2
+text-ver-color=83a598
+text-wrong-color=fb4934
+text-clear-color=fabd2f
+text-caps-lock-color=fe8019
+
+# Line (between inside circle and ring)
+line-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000

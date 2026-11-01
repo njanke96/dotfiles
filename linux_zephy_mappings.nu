@@ -14,6 +14,9 @@ export def "get_zephy_file_map" [] {
     { repo: $"sway/config", sys: $"($config_home)/sway/config" }
     { repo: $"sway/config.d/zephy.config", sys: $"($config_home)/sway/config.d/zephy.config" }
 
+    # swaylock
+    { repo: $"swaylock/config", sys: $"($config_home)/swaylock/config" }
+
     # ironbar
     { repo: $"ironbar_zephy/config.yaml", sys: $"($config_home)/ironbar/config.yaml" }
     { repo: $"ironbar_zephy/style.css", sys: $"($config_home)/ironbar/style.css" }
