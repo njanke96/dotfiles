@@ -96,7 +96,6 @@ exec {
   swaync
   nm-applet
   blueman-applet
-  swayidle -w timeout 900 'loginctl suspend' before-sleep 'true'
 }
 
 # Wait for pipewire
