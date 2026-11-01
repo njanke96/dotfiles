@@ -168,8 +168,6 @@ exec_always {
     gsettings set $gnome_schema color-scheme 'prefer-dark'
 }
 
-# Note: QT works by qt5ct/qt6ct config files and QT_QPA_PLATFORMTHEME
-
 ### Misc conftime
 #
 

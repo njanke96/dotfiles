@@ -5,7 +5,7 @@ export XKB_DEFAULT_LAYOUT=us
 export XKB_DEFAULT_MODEL=pc104
 
 # qt
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=gtk3
 
 # cursor theme
 export XCURSOR_SIZE=24
