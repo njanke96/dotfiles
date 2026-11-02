@@ -1,7 +1,6 @@
 # swaylock config - Gruvbox Dark
 
 # Background
-image=~/Pictures/wallpapers/forest.jpg
 color=282828
 
 # Inside (idle / verifying / wrong / clear / caps-lock)
