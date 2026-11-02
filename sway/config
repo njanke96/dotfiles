@@ -205,6 +205,9 @@ bindsym $alt+Tab exec rofi -show window
 # Despite the name, also works for non-floating windows.
 floating_modifier $mod normal
 
+# Lock
+bindsym $mod+Shift+c exec swaylock
+
 # Power
 bindsym $mod+Shift+z exec ~/scripts/loginctl-prompt.nu suspend
 

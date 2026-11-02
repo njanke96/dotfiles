@@ -24,3 +24,8 @@ ironbar &
 
 # blueman applet
 blueman-applet &
+
+# swayidle
+swayidle -w \
+    timeout 600 'loginctl suspend' \
+    before-sleep 'swaylock -f' &
