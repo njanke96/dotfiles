@@ -20,7 +20,19 @@ profile default {
 	output $main
 }
 
-profile leftmost-main {
+profile left-landscape {
+	output HDMI-A-2 disable
+
+	output $secondary {
+		transform normal
+	}
+
+	output $main {
+		position 1920,0
+	}
+}
+
+profile left-main {
 	output HDMI-A-2 disable
 	
 	output $secondary {
