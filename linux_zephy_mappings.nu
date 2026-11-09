@@ -97,6 +97,7 @@ export def "get_zephy_file_map" [] {
     { repo: "turnstile/service/dbus/check", sys: $"($config_home)/service/dbus/check" }
     { repo: "turnstile/service/dbus/run", sys: $"($config_home)/service/dbus/run" }
     { repo: "turnstile/service/pipewire/run", sys: $"($config_home)/service/pipewire/run" }
+    { repo: "turnstile/service/syncthing/run", sys: $"($config_home)/service/syncthing/run" }
     { repo: "turnstile/service/turnstile-ready/conf", sys: $"($config_home)/service/turnstile-ready/conf" }
   ]
   
