@@ -96,6 +96,7 @@ exec {
   swaync
   nm-applet
   blueman-applet
+  syncthingtray --wait
 }
 
 # Wait for pipewire
@@ -396,6 +397,7 @@ assign [app_id="Thunderbird"] $workspace_mail
 for_window [title="Bolt Launcher"] floating enable
 for_window [title="RuneLite Launcher"] floating enable
 for_window [app_id="sway-help"] floating enable
+for_window [app_id="naps2" title=".*airscan.*"] floating enable
 for_window [app_id="net.davidotek.pupgui2"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [app_id="wiremix"] floating enable

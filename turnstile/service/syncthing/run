@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ -r ./conf ] && . ./conf
+
+# Wait for the dbus session service to be up
+SVDIR="$HOME/.config/service" sv check dbus >/dev/null || exit 1
+
+if [ -d "$TURNSTILE_ENV_DIR" ]; then
+	exec chpst -e "$TURNSTILE_ENV_DIR" syncthing serve --no-browser
+fi
+
+exec syncthing serve --no-browser
