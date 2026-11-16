@@ -18,12 +18,12 @@ start:
           size: 18
         - type: "label"
           label: " Applications"
+- type: "workspaces"
+  all_monitors: true
 center:
 - type: "focused"
   icon_size: 16
 end:
-- type: "workspaces"
-  all_monitors: true
 - type: "sys_info"
   format:
     - "CPU: {cpu_percent}%, {temp_c@k10temp Tctl}°C"
