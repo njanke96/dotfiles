@@ -27,6 +27,11 @@ $env.path = $env.path | append [
   "/usr/local/bin"
 ]
 
+## Podman bin
+$env.path = $env.path | append [
+  "/opt/podman/bin"
+]
+
 ## --- Google Cloud SDK Setup ---
 
 # Define the base directory (this is the value of ${0:A:h} in the Zsh context)
